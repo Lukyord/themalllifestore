@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'DBAiry_Std';
+    src: url('../font/DBAiry/DBAiry-StdBdIt.eot');
+    src: url('../font/DBAiry/DBAiry-StdBdIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/DBAiry/DBAiry-StdBdIt.woff2') format('woff2'),
+        url('../font/DBAiry/DBAiry-StdBdIt.woff') format('woff'),
+        url('../font/DBAiry/DBAiry-StdBdIt.ttf') format('truetype'),
+        url('../font/DBAiry/DBAiry-StdBdIt.svg#DBAiry-StdBdIt') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DBAiry_Std';
+    src: url('../font/DBAiry/DBAiry-StdMed.eot');
+    src: url('../font/DBAiry/DBAiry-StdMed.eot?#iefix') format('embedded-opentype'),
+        url('../font/DBAiry/DBAiry-StdMed.woff2') format('woff2'),
+        url('../font/DBAiry/DBAiry-StdMed.woff') format('woff'),
+        url('../font/DBAiry/DBAiry-StdMed.ttf') format('truetype'),
+        url('../font/DBAiry/DBAiry-StdMed.svg#DBAiry-StdMed') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DBAiry_Std';
+    src: url('../font/DBAiry/DBAiry-StdBd.eot');
+    src: url('../font/DBAiry/DBAiry-StdBd.eot?#iefix') format('embedded-opentype'),
+        url('../font/DBAiry/DBAiry-StdBd.woff2') format('woff2'),
+        url('../font/DBAiry/DBAiry-StdBd.woff') format('woff'),
+        url('../font/DBAiry/DBAiry-StdBd.ttf') format('truetype'),
+        url('../font/DBAiry/DBAiry-StdBd.svg#DBAiry-StdBd') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GTFlexa_Ext';
+    src: url('../font/GTFlexa/GTFlexa-ExtRg.eot');
+    src: url('../font/GTFlexa/GTFlexa-ExtRg.eot?#iefix') format('embedded-opentype'),
+        url('../font/GTFlexa/GTFlexa-ExtRg.woff2') format('woff2'),
+        url('../font/GTFlexa/GTFlexa-ExtRg.woff') format('woff'),
+        url('../font/GTFlexa/GTFlexa-ExtRg.ttf') format('truetype'),
+        url('../font/GTFlexa/GTFlexa-ExtRg.svg#GTFlexa-ExtRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DBAiry_Std';
+    src: url('../font/DBAiry/DBAiry-StdMedIt.eot');
+    src: url('../font/DBAiry/DBAiry-StdMedIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/DBAiry/DBAiry-StdMedIt.woff2') format('woff2'),
+        url('../font/DBAiry/DBAiry-StdMedIt.woff') format('woff'),
+        url('../font/DBAiry/DBAiry-StdMedIt.ttf') format('truetype'),
+        url('../font/DBAiry/DBAiry-StdMedIt.svg#DBAiry-StdMedIt') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
