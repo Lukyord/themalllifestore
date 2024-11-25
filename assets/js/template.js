@@ -1,7 +1,7 @@
 // FILTER
 jQuery(document).ready(function () {
-    $(".page-template .category-filter .filter").on("click", function () {
-        $(".page-template .category-filter .filter").removeClass("active");
+    $(".category-filter .filter").on("click", function () {
+        $(".category-filter .filter").removeClass("active");
         $(this).addClass("active");
     });
 });

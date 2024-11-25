@@ -1,3 +1,38 @@
+// ENTRY FADEIN
+jQuery(function ($) {
+    // ANIMATE
+    $('.entry-fadeIn > *:not([class*="wp-block-"])').addClass("wow fadeIn");
+    $(
+        '.entry-fadeIn *:is([class*="wp-block-"]) > *:not([class*="wp-block-"], ul, ol), .entry-fadeIn li'
+    ).addClass("wow fadeIn");
+});
+
+// ON WINDOW RESIZE CALLBACK =============================
+function onWindowResize(callback, delay = 300, executeOnLoad = true) {
+    let lastWidth = $(window).width();
+    let resizeTimeout;
+
+    if (executeOnLoad && typeof callback === "function") {
+        callback();
+    }
+
+    $(window).on("resize", function () {
+        const newWidth = $(window).width();
+
+        if (newWidth !== lastWidth) {
+            lastWidth = newWidth;
+
+            clearTimeout(resizeTimeout);
+
+            resizeTimeout = setTimeout(() => {
+                if (typeof callback === "function") {
+                    callback();
+                }
+            }, delay);
+        }
+    });
+}
+
 /* Footer Mobile */
 $("#show_footerMenu").on("click", function () {
     $("#footer_container").slideToggle();
@@ -25,9 +60,11 @@ $(".social-nav a").on("click", function () {
 });
 
 /* Burger Menu */
-$(".burger-icon").on("click", function () {
-    $("body").toggleClass("menu-open");
-});
+// $(".burger-icon").on("click", function () {
+//     if (!$("body").hasClass("menu-open")) {
+//         $("body").addClass("menu-open");
+//     }
+// });
 
 if ($("body").hasClass("homepage")) {
     $("body").css("--home-header", $(".homepage-intro").height() + "px");
@@ -66,34 +103,6 @@ jQuery(function ($) {
         wow.init();
     }
     if ($(".page-homepage").length) {
-        setTimeout(function () {
-            $(".homepage-intro .tab-wrapper .tab-hover")
-                .children()
-                .first()
-                .find("a")
-                .addClass("active");
-        }, 1000);
-
-        function autoAddClass() {
-            var current = $(".tab-hover li a.active");
-
-            current.removeClass("active");
-
-            var next = current.parent().next();
-            if (!next.length) {
-                next = $(".tab-hover li").first();
-            }
-
-            next.find("a").addClass("active");
-
-            const autoTimeout = setTimeout(autoAddClass, 3000);
-
-            $(".homepage-intro .tab-hover a").on("mouseenter", function () {
-                clearTimeout(autoTimeout);
-            });
-        }
-        autoAddClass();
-
         function posLogo() {
             const nav_height = $(".homepage-intro")
                 .find(".tab-wrapper")
@@ -221,6 +230,7 @@ jQuery(function ($) {
         var selectParent = $(this),
             select = $(this).find(".select2"),
             select2fixed = $(this).find(".select2-fixed");
+        select2Multiple = $(this).find(".select2-multiple");
 
         var query = {};
         function markMatch(text, term) {
@@ -311,6 +321,25 @@ jQuery(function ($) {
             });
         }
         if (select.hasClass("branch-select")) {
+            select.on("select2:select", function (e) {
+                const selectBranch = ".tab-content#" + select.val();
+
+                select
+                    .closest("*[class*='-section']")
+                    .find(".tab-content")
+                    .removeClass("active");
+                select
+                    .closest("*[class*='-section']")
+                    .find(selectBranch)
+                    .addClass("active");
+
+                // scroll down 1 px
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(scroll + 1);
+            });
+        }
+
+        if (select.hasClass("retail-space-select")) {
             select.on("select2:select", function (e) {
                 const selectBranch = ".tab-content#" + select.val();
 
@@ -496,7 +525,8 @@ jQuery(function ($) {
                     .closest(".custom-file-upload")
                     .data("button");
             } else {
-                var _txtB = '<i class="ic ic-upload"></i>';
+                // var _txtB = '<i class="ic ic-upload"></i>';
+                var _txtB = "<p>Choose File</p>";
             }
 
             var $file = $(this).addClass("custom-file-upload-hidden"),
@@ -507,9 +537,9 @@ jQuery(function ($) {
                         '" readonly />'
                 ),
                 $button = $(
-                    '<div class="file-upload-action"><button type="button" class="file-upload-button explore">' +
+                    '<div class="file-upload-action"><button type="button" class="file-upload-button">' +
                         _txtB +
-                        "</button></div>"
+                        "</button><p>Maximum file size: 3 MB. Only .jpg and .png formats are allowed.</p></div>"
                 ),
                 $label = $(
                     '<div class="file-upload-action"><label class="file-upload-button" for="' +
@@ -653,14 +683,19 @@ jQuery(function ($) {
 
     function showTab(elem) {
         $(elem)
-            .parents(".tab-container")
+            .closest(".tab-container")
             .find(".tab-content")
+            .filter(function () {
+                return !$(this).hasClass("nested-tab");
+            })
             .removeClass("active");
         $(elem + ".tab-content").addClass("active");
 
         // scroll down 1 px
-        var scroll = $(window).scrollTop();
-        $(window).scrollTop(scroll + 1);
+        if (!$(elem).parents(".tab-container").hasClass("no-wow")) {
+            var scroll = $(window).scrollTop();
+            $(window).scrollTop(scroll + 1);
+        }
 
         tabActive(elem);
 
@@ -670,31 +705,8 @@ jQuery(function ($) {
     $(".tab-hover .tab-hover-link").hover(function (e) {
         e.preventDefault();
         var _id = $(this).data("tab-id");
-        console.log(_id);
 
         showTab(_id);
-
-        // $(this)
-        //     .parents(".tab-container")
-        //     .find(".tab-hover-link")
-        //     .removeClass("active");
-        // $(this)
-        //     .parents(".tab-container")
-        //     .find('.tab-hover-link[data-tab-id="' + _id + '"]')
-        //     .addClass("active");
-
-        // $(this)
-        //     .parents(".tab-container")
-        //     .find(".tab > li")
-        //     .removeClass("active-parent");
-        // $(this)
-        //     .parents(".tab-container")
-        //     .find('.tab-hover-link[data-tab-id="' + _id + '"]')
-        //     .parent("li")
-        //     .addClass("active-parent");
-
-        // $(this).parent().siblings().find("> ul").slideUp(300);
-        // $(this).parent().find("> ul").slideDown(300);
 
         $(".tab-hover .tab-hover-link").removeClass("active");
 
@@ -710,6 +722,54 @@ jQuery(function ($) {
         // Slide down the ul within the current li
         $(this).parent().find("> ul").slideDown(300);
     });
+
+    if ($(".homepage-intro").length) {
+        setTimeout(function () {
+            $(".homepage-intro .tab-wrapper .tab-hover")
+                .children()
+                .first()
+                .find("a")
+                .addClass("active");
+        }, 1000);
+
+        function autoAddClass() {
+            var current = $(".tab-hover li a.active");
+
+            current.removeClass("active");
+
+            var next = current.parent().next();
+            if (!next.length) {
+                next = $(".tab-hover li").first();
+            }
+
+            var _id = next.find("a").data("tab-id");
+
+            function showTabWithinContainer(tabId, container) {
+                var tabContainer = $(container);
+
+                tabContainer
+                    .find(".tab-content")
+                    .filter(function () {
+                        return !$(this).hasClass("nested-tab");
+                    })
+                    .removeClass("active");
+
+                tabContainer.find(`.tab-content${tabId}`).addClass("active");
+            }
+
+            const tabContainer = current.closest(".homepage-intro");
+            showTabWithinContainer(_id, tabContainer); // Change the tab content for the next ta
+
+            next.find("a").addClass("active");
+
+            const autoTimeout = setTimeout(autoAddClass, 3000);
+
+            $(".homepage-intro .tab-hover a").on("mouseenter", function () {
+                clearTimeout(autoTimeout);
+            });
+        }
+        autoAddClass();
+    }
 
     $(".tab-link").click(function (e) {
         e.preventDefault();
@@ -955,8 +1015,9 @@ jQuery(function ($) {
 
 /* BACK TO TOP */
 jQuery(function ($) {
-    $("#backtotop").click(function (e) {
+    $(".backtotop").click(function (e) {
         e.preventDefault();
+        console.log("top");
         $("html, body").animate({ scrollTop: 0 }, 800, "linear");
     });
 });
@@ -977,7 +1038,9 @@ jQuery(function ($) {
     if ($(".logo-marquee").length) {
         $(".logo-marquee").each(function () {
             const logo_count = $(this).find("img").length;
-            if (logo_count > 3) {
+            const largeMarquee = $(this).hasClass("large");
+            const maxLogo = largeMarquee ? 5 : 3;
+            if (logo_count > maxLogo || $(window).width() < 768) {
                 $(this).liMarquee({
                     circular: true,
                     startShow: true,
@@ -1667,23 +1730,45 @@ requestAnimationFrame(raf);
 // HEADER
 jQuery(function ($) {
     // LANG SELECT
-    $(".lang-select").on("mouseenter", function () {
-        $(this).addClass("active");
+    if ($(".lang-select").length) {
+        function langSelectMenu() {
+            if ($(window).width() > 1280) {
+                $(".lang-select").on("mouseenter", function () {
+                    $(this).addClass("active");
 
-        $("#header").on("mouseleave", function () {
-            $(".lang-select").removeClass("active");
-        });
+                    $("#header").on("mouseleave", function () {
+                        $(".lang-select").removeClass("active");
+                    });
+                });
+            } else {
+                $(".lang-select").on("click", function (e) {
+                    e.stopPropagation();
+                    if ($(this).hasClass("active")) {
+                        $(this).removeClass("active");
+                    } else {
+                        $(this).toggleClass("active");
+                    }
+                });
 
-        $(".option").on("click", function () {
-            const selectedFlag = $(this).data("flag");
+                $(document).on("click", function (e) {
+                    if (!$(e.target).closest(".lang-select").length) {
+                        $(".lang-select").removeClass("active");
+                    }
+                });
+            }
 
-            // Update the selected language display
-            $(".lang-select .current-lang").attr("src", selectedFlag);
+            $(".option").on("click", function (e) {
+                e.stopPropagation();
+                const selectedFlag = $(this).data("flag");
 
-            // Close the options dropdown
-            $(".lang-select").removeClass("active");
-        });
-    });
+                $(".lang-select .current-lang").attr("src", selectedFlag);
+
+                $(".lang-select").removeClass("active");
+            });
+        }
+
+        onWindowResize(langSelectMenu);
+    }
 
     // SEARCH
     $(".header-search-trigger").on("click", function () {
@@ -1696,15 +1781,26 @@ jQuery(function ($) {
 
     // MENU TRIGGER
     $(".header-menu-trigger").on("click", function () {
-        if ($(this).hasClass("active")) {
+        function closeMenu() {
             $("html").removeClass("header-menu-enabled");
             $(".header-menu-trigger").removeClass("active");
+            $("body").removeClass("menu-open");
 
             setTimeout(() => {
                 $(".menu-tab").removeClass("active");
             }, 600);
+        }
 
-            return;
+        if ($(window).width() >= 1280) {
+            if ($(this).hasClass("active")) {
+                closeMenu();
+                return;
+            }
+        } else {
+            if ($("html").hasClass("header-menu-enabled")) {
+                closeMenu();
+                return;
+            }
         }
 
         // HTML CLASS
@@ -1789,6 +1885,95 @@ jQuery(function ($) {
             setTimeout(function () {
                 init();
             }, 300);
+        });
+    }
+});
+
+jQuery(function ($) {
+    // RELLAX
+    if ($(".rellax").length) {
+        new Rellax(".rellax", {
+            center: true,
+            speed: -1,
+        });
+    }
+});
+
+/* LOCATION HASH */
+jQuery(function ($) {
+    setTimeout(function () {
+        var headerHeight =
+            parseFloat(
+                getComputedStyle(document.documentElement).getPropertyValue(
+                    "--header-h"
+                )
+            ) || 0;
+        if (window.location.hash) {
+            $("html, body")
+                .delay(100)
+                .animate(
+                    {
+                        scrollTop:
+                            $(window.location.hash).offset().top - headerHeight,
+                    },
+                    800
+                );
+        }
+    }, 100);
+});
+
+jQuery(function ($) {
+    $(".link-scroll").on("click", function (e) {
+        e.preventDefault();
+
+        var targetId = $(this).attr("href");
+
+        if ($(targetId).length) {
+            var targetOffset = $(targetId).offset().top;
+
+            var headerHeight =
+                parseFloat(
+                    getComputedStyle(document.documentElement).getPropertyValue(
+                        "--header-h"
+                    )
+                ) || 0;
+
+            $("html, body").animate(
+                {
+                    scrollTop: targetOffset - headerHeight,
+                },
+                800,
+                "linear"
+            );
+        }
+    });
+});
+
+// MASONRY GRID
+jQuery(function ($) {
+    if ($(".masonry-grid").length) {
+        $(".masonry-grid").each(function () {
+            var _this = $(this);
+
+            function initializeMasonry() {
+                if (_this.data("masonry")) {
+                    _this.masonry("destroy");
+                }
+
+                var isSmallScreen = window.innerWidth < 991;
+
+                _this.masonry({
+                    itemSelector: ".masonry-grid-item",
+                    percentPosition: true,
+                    horizontalOrder: !isSmallScreen,
+                });
+            }
+
+            onWindowResize(initializeMasonry);
+
+            _this.imagesLoaded().progress(function () {
+                _this.masonry("layout");
+            });
         });
     }
 });

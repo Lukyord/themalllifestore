@@ -240,7 +240,7 @@ body {
 .entry-content > small {
     font-weight: var(--weight-medium) !important;
 }
-.entry-content p,
+
 .entry-content ul {
     font-size: var(--font-size-h5);
 }
@@ -351,7 +351,7 @@ footer .footer-menu a {
     font-family: var(--font-heading);
 }
 .font-body {
-    font-family: var(--font-body);
+    font-family: var(--font-body) !important;
 }
 .weight-bold {
     font-weight: var(--weight-bold) !important;
@@ -441,6 +441,10 @@ header .header-wrapper {
     display: flex;
     cursor: pointer;
     align-items: center;
+}
+
+#header .header-search input {
+    border: none;
 }
 #site_logo {
     opacity: 0;
@@ -637,7 +641,7 @@ html.header-menu-enabled .pcMenu-container {
     padding: var(--spacing-xl) var(--container-padding);
     display: flex;
     flex-direction: column;
-    row-gap: var(--spacing-5xl);
+    row-gap: min(10.4166666667vw, 150px);
     height: 100%;
 }
 
@@ -736,6 +740,7 @@ footer {
 .footer-container *:is(.left-side, .right-side) {
     display: flex;
     justify-content: space-between;
+    grid-gap: var(--spacing-2xs);
 }
 
 .footer-menu {
@@ -758,6 +763,9 @@ footer {
 }
 .copyright p a {
     cursor: pointer;
+}
+html.no-touchevents .footer-menu a:hover {
+    opacity: 0.5;
 }
 /* End of Footer */
 
@@ -977,6 +985,13 @@ footer {
     flex-shrink: 0;
     background-color: rgba(255, 255, 255, 0.8);
 }
+
+@media (max-width: 767px) {
+    .swiper-button::after {
+        width: 30px;
+        height: 30px;
+    }
+}
 .swiper-button.swiper-button-prev::after {
     content: "\e909";
 }
@@ -1049,8 +1064,8 @@ footer {
 }
 .happening-section {
     padding: var(--spacing-2lg) 0;
-    overflow: hidden;
 }
+
 .happening-section.tab-container {
     display: block;
 }
@@ -1615,9 +1630,6 @@ footer {
     .promotion-wrapper .swiper-promo .swiper-wrapper {
         transition-timing-function: linear !important;
     }
-    .entry-content p {
-        font-size: 18px;
-    }
     .single-intro .grid-content.grid2 {
         grid-template-columns: 100%;
         grid-row-gap: var(--spacing-sm);
@@ -1668,6 +1680,11 @@ footer {
         justify-content: center;
         align-items: center;
         grid-column-gap: var(--spacing-xs);
+    }
+
+    .social-nav a {
+        line-height: 1;
+        display: block;
     }
     .social-nav .ic {
         font-size: 24px;
@@ -1796,7 +1813,6 @@ footer {
         width: 100%;
     }
     .swiper-happeningThumb {
-        overflow: visible;
         width: 100vw;
         margin-left: calc(-1 * var(--container-padding));
     }
@@ -2045,17 +2061,17 @@ footer {
     bottom: 0;
 }
 
-.menu-open .burger-icon .burger-line-1 {
+.header-menu-enabled .burger-icon .burger-line-1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
 }
 
-.menu-open .burger-icon .burger-line-2 {
+.header-menu-enabled .burger-icon .burger-line-2 {
     opacity: 0;
 }
 
-.menu-open .burger-icon .burger-line-3 {
+.header-menu-enabled .burger-icon .burger-line-3 {
     position: absolute;
     bottom: 50%;
     transform: translateY(50%) rotate(45deg);
@@ -2078,9 +2094,13 @@ footer {
     will-change: transform;
     transition: transform var(--transition) var(--timing-function);
 }
-.menu-open .mobileMenu-container {
-    transform: translateX(0);
+
+@media (max-width: 1279.98px) {
+    .header-menu-enabled .mobileMenu-container {
+        transform: translateX(0);
+    }
 }
+
 .mobileMenu-container .content {
     width: 100%;
 }
@@ -2211,4 +2231,60 @@ uncomment this part if you haven't added this code anywhere else
 
 .mfp-image-holder .mfp-content {
     max-width: 90%;
+}
+
+/* SELECT2 */
+.select2-container .select2-selection--multiple {
+    min-height: var(--input-height);
+    height: auto;
+}
+
+.select2-container--default .select2-selection--multiple,
+.select2-container--default.select2-container--focus
+    .select2-selection--multiple {
+    border-radius: 0;
+    border: var(--input-border);
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+    margin: 0;
+    padding: 0;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__rendered {
+    padding: var(--spacing-3xs) var(--input-spacing-x);
+    display: flex;
+    align-items: center;
+    column-gap: var(--spacing-2xs);
+    row-gap: var(--spacing-3xs);
+    flex-wrap: wrap;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+    font-size: var(--font-size-body1);
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    float: unset;
+    margin: 0;
+    padding: var(--spacing-3xs) var(--spacing-2xs);
+    color: var(--color-gray);
+    font-family: var(--font-heading);
+    border-radius: 33px;
+}
+
+.select2-container--default .select2-selection--multiple:after,
+.select2-container--default.select2-container--focus
+    .select2-selection--multiple:after {
+    content: "\e908";
+    font-family: "iconfont";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--spacing-2xs);
+    color: var(--color-gray-light);
 }

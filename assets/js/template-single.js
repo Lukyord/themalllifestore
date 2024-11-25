@@ -1,7 +1,7 @@
 // HERO SWIPER AND THUMB
 jQuery(document).ready(function ($) {
-    if ($(".template-single-hero").length) {
-        $(".template-single-hero").each(function () {
+    if ($(".template-banner-slide").length) {
+        $(".template-banner-slide").each(function () {
             var _this = $(this).find(".swiper.main");
             var _this_thumb = $(this).find(".swiper.thumb");
 

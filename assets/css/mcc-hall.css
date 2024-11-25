@@ -1,0 +1,24 @@
+/* MCC HALL ==================== */
+.mcc-hall-hero.banner-hero::before {
+    height: 50%;
+}
+
+.mcc-hall-intro {
+    padding-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .mcc-hall-hero.banner-hero::before {
+        height: 70%;
+    }
+}
+
+/* MCC HALL GALLERY ==================== */
+.mcc-hall-gallery {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--color-white);
+}
+
+.page-mcc-hall .happening-section {
+    padding-top: 0;
+}

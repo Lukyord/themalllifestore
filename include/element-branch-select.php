@@ -1,4 +1,4 @@
-<div class="select wow fadeIn">
+<div class="select">
     <select name="" id="" class="select2 branch-select" data-placeholder="ALL BRANCHES">
         <?php
         $branch_arr = [
@@ -6,7 +6,7 @@
             "bangkae" => "BANGKAE",
             "bangkapi" => "BANGKAPI",
             "ngamwongwan" => "NGAMWONGWAN",
-            "thapra" => "THAPRA",
+            "thaphra" => "THAPHRA",
             "korat" => "KORAT",
         ];
         foreach ($branch_arr as $branch_id => $branch_name):

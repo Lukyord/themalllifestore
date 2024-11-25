@@ -3,7 +3,7 @@
 <?php include($root . "header.php"); ?>
 
 <main id="main" class="page-main page-tourist">
-    <section class="tourist-hero">
+    <section class="banner-hero tourist-hero">
         <div class="background-image">
             <?php
             $cover = "./assets/img/design/tourist-hero-bg.jpg";
@@ -18,10 +18,7 @@
                     <source media="(min-width:0px)" srcset="<?php echo $cover_m ?>">
                     <img
                         src="<?php echo $cover; ?>"
-                        alt="Index Hero Image"
-                        data-animation="matrixZoomOut"
-                        class="inside-animation ease-out-cubic"
-                        data-wow-duration="1s"
+                        alt="Hero Image"
                         draggable="false">
                 </picture>
             <?php } ?>
@@ -29,7 +26,7 @@
 
         <div class="section-content">
             <div class="content-wrapper">
-                <div class="card wow fadeIn" data-wow-delay="0.3s">
+                <div class="card wow fadeIn" data-wow-delay="0.6s">
                     <div class="image">
                         <img src="./assets/img/design/tourist-card.png" alt="Tourist Card">
                     </div>
@@ -141,42 +138,11 @@
 
                     ]
                 ];
-                $services_arr = array_fill(0, 15, $service_item);
+                $services_arr = array_fill(0, 8, $service_item);
 
 
                 foreach ($services_arr as $service) {
-                ?>
-                    <div class="service-item">
-                        <div class="background-image">
-                            <img src="<?php echo $service["image"] ?>" alt="Service Image">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">
-                                <h5 class="title"><?php echo $service_item["title"] ?></h5>
-                                <p class="subtitle"><?php echo $service_item["branch"] ?></p>
-                            </div>
-
-                            <div class="list">
-                                <?php
-                                foreach ($service["item"] as $item) {
-                                ?>
-                                    <div class="list-item">
-                                        <div class="name-and-branch">
-                                            <h6><?php echo $item["name"] ?></h6>
-                                            <p><?php echo $item["branch"] ?></p>
-                                        </div>
-
-                                        <p><?php echo $item["floor"] ?></p>
-
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php
+                    include($root . "include/service-item.php");
                 }
                 ?>
             </div>

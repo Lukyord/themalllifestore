@@ -1,0 +1,256 @@
+/* GIFTCARD ==================== */
+
+/* GIFTCARD INFO ==================== */
+.giftcard-info {
+    display: flex;
+}
+
+.info-section {
+    width: 50%;
+    padding: var(--spacing-2xl) var(--container-padding);
+    display: flex;
+    justify-content: center;
+}
+
+.info-section:first-child {
+    background: linear-gradient(181deg, #fff 81.46%, #999 165.66%);
+}
+
+.info-section .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-lg);
+    max-width: 565px;
+}
+
+.info-section .title {
+    font-size: var(--font-size-h3);
+    font-weight: var(--weight-bold);
+    color: var(--color-theme-red);
+}
+
+.info-section .image {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.info-section .image img {
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .giftcard-info {
+        flex-direction: column;
+    }
+
+    .info-section {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .info-section .content-wrapper {
+        grid-gap: var(--spacing-md);
+        overflow: hidden;
+        height: 113.3333333333vw;
+        position: relative;
+        padding: var(--spacing-md) var(--container-padding);
+        padding-bottom: 0;
+    }
+
+    .info-section.show-all .content-wrapper {
+        height: auto;
+    }
+
+    .info-section .content-wrapper:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -0.58%,
+            #000 99.92%
+        );
+    }
+
+    .info-section.show-all .content-wrapper:after {
+        content: none;
+    }
+
+    .info-section:first-child .content-wrapper:after {
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) -0.58%,
+            #fff 99.92%
+        );
+    }
+
+    .info-section .toggle-show::before {
+        content: attr(data-hidden);
+        background-color: var(--color-black);
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: var(--color-theme-red);
+        padding: var(--spacing-md) 0;
+        font-family: var(--font-body);
+    }
+
+    .info-section:first-child .toggle-show::before {
+        background-color: var(--color-white);
+    }
+
+    .info-section.show-all .toggle-show::before {
+        content: attr(data-shown);
+    }
+
+    .info-section.show-all:first-child .toggle-show::before {
+        background-color: unset;
+    }
+
+    .info-section .title {
+        text-align: center;
+    }
+
+    .info-section .image {
+        width: 100%;
+    }
+}
+
+/* GIFTCARD BUY ==================== */
+.giftcard-buy {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-2xl) var(--container-padding);
+}
+
+.giftcard-buy .wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-lg);
+}
+
+.giftcard-buy .topic {
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-2xs);
+}
+
+.giftcard-buy .topic .topic-title {
+    font-size: var(--font-size-h4);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-heading);
+}
+
+.giftcard-buy .topic p {
+    font-family: var(--font-heading);
+}
+
+.giftcard-buy .topic ol {
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 1em;
+}
+
+.giftcard-buy .topic ol li::marker {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-body1);
+}
+
+.giftcard-buy .buy-locations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: 8px;
+    margin-top: var(--spacing-xs);
+}
+
+.giftcard-buy .buy-locations .location-item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: var(--spacing-2xs);
+    padding: var(--spacing-sm);
+    background: rgba(198, 198, 198, 0.16);
+}
+
+.giftcard-buy .buy-locations .location-item p {
+    font-family: var(--font-heading);
+}
+
+/* GIFTCARD BRANCH PARTICIPATE ==================== */
+.giftcard-buy .branch-participate {
+    margin-top: var(--spacing-xs);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: var(--spacing-2xs);
+}
+
+.giftcard-buy .branch-participate .branch-item {
+    position: relative;
+}
+
+.giftcard-buy .branch-participate .branch-item .link-overlay {
+    z-index: 11;
+}
+
+.giftcard-buy .branch-participate .branch-item .image {
+    width: 100%;
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.giftcard-buy .branch-participate .branch-item .image::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.57%, #000 100%);
+    z-index: 5;
+}
+
+.giftcard-buy .branch-participate .branch-item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--duration) var(--timing-function);
+}
+
+.giftcard-buy .branch-item:hover .image img {
+    transform: scale(1.1);
+}
+
+.giftcard-buy .branch-participate .branch-item .branch-name {
+    position: absolute;
+    bottom: var(--spacing-3xs);
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-xs);
+    color: var(--color-white);
+    z-index: 10;
+}
+
+@media (max-width: 991px) {
+    .giftcard-buy {
+        padding: var(--spacing-lg) var(--container-padding);
+    }
+
+    .giftcard-buy .wrapper {
+        grid-gap: var(--spacing-md);
+    }
+
+    .giftcard-buy .buy-locations {
+        grid-template-columns: 1fr;
+    }
+
+    .giftcard-buy .branch-participate {
+        grid-template-columns: 1fr 1fr;
+    }
+}

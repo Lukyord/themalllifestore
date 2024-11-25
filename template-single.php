@@ -3,88 +3,18 @@
 <?php include($root . "header.php"); ?>
 
 <main id="main" class="page-main template-single">
-    <section class="template-single-hero" id="header-bound">
-        <div class="content-wrapper">
-            <?php
-            $slide = [
-                // "pc" => './assets/vdo/development-intercontinental6.mp4',
-                "pc" => "./assets/img/design/template-single-mock-image1.jpg",
-                "mobile" => "./assets/img/design/template-single-m-mock-image1.jpg"
-            ];
-            $hero_slide_images = array_fill(0, 15, $slide);
+    <?php
 
-            ?>
-            <div class="swiper main">
-                <div class="swiper-wrapper">
-                    <?php
-                    foreach ($hero_slide_images as $image) {
-                    ?>
-                        <div class="swiper-slide">
-                            <div class="image">
-                                <?php
-                                $cover = $image["pc"];
-                                $cover_m = $image["mobile"];
-                                if (preg_match("/\.(mp4)$/", $cover)) { ?>
-                                    <figure class="object blurred-media">
-                                        <video playsinline muted autoplay loop src="<?php echo $cover; ?>"></video>
-                                    </figure>
-                                <?php } else { ?>
-                                    <picture class="object blurred-media">
-                                        <source media="(min-width:992px)" srcset="<?php echo $cover ?>">
-                                        <source media="(min-width:0px)" srcset="<?php echo $cover_m ?>">
-                                        <img
-                                            src="<?php echo $cover; ?>"
-                                            alt="Index Hero Image"
-                                            data-animation="matrixZoomOut"
-                                            class="inside-animation ease-out-cubic"
-                                            data-wow-duration="1s"
-                                            draggable="false">
-                                    </picture>
-                                <?php } ?>
-                            </div>
-                        </div>
-                    <?php
-                    } ?>
-                </div>
-            </div>
+    $slide = [
+        // "pc" => './assets/vdo/development-intercontinental6.mp4',
+        "pc" => "./assets/img/design/template-single-mock-image1.jpg",
+        "mobile" => "./assets/img/design/template-single-m-mock-image1.jpg"
+    ];
+    $hero_slide_images = array_fill(0, 15, $slide);
 
-            <div class="thumbs">
-                <div class="swiper thumb">
-                    <div class="swiper-wrapper">
-                        <?php
-                        foreach ($hero_slide_images as $image) {
-                        ?>
-                            <div class="swiper-slide">
-                                <div class="image">
-                                    <?php
-                                    $cover = $image["pc"];
-                                    $cover_m = $image["mobile"];
-                                    if (preg_match("/\.(mp4)$/", $cover)) { ?>
-                                        <figure class="object blurred-media">
-                                            <video playsinline muted autoplay loop src="<?php echo $cover; ?>"></video>
-                                        </figure>
-                                    <?php } else { ?>
-                                        <picture class="object blurred-media">
-                                            <source media="(min-width:992px)" srcset="<?php echo $cover ?>">
-                                            <source media="(min-width:0px)" srcset="<?php echo $cover_m ?>">
-                                            <img
-                                                src="<?php echo $cover; ?>"
-                                                alt="Index Hero Image"
-                                                data-animation="matrixZoomOut"
-                                                class="inside-animation ease-out-cubic"
-                                                data-wow-duration="1s"
-                                                draggable="false">
-                                        </picture>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        <?php
-                        } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    include($root . "include/template-banner-slide.php");
+    ?>
 
     <section class="template-single-content">
         <div class="wrapper wrapper-content">
@@ -132,7 +62,7 @@
                         <iframe
                             id="<?php echo $development_project["project-name"] ?>-iframe"
                             title="?php echo $development_project['project-name'] ?> video link"
-                            src="<?php echo $cover; ?>&rel=0">
+                            src="<?php echo $cover; ?>">
                             allow="accelerometer; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
                         </iframe>
@@ -193,7 +123,7 @@
                     "description" => "มาเหนือทุกโปรจึ้ง พร้อมปึ้งทุกลุคสายแฟ กับแบรนด์ชั้นนำ MEN'S FASHION SALE UP TO 50% BAGGAGE LUGGAGE / DAPPER / DEVY / FITFLOP / G2000/ DAPPER / DEVY / FITFLOP / DAPPER / DEVY / FITFLOP / G2000/ DAPPER / DEVY / FITFLOP"
                 ];
 
-                for ($i = 0; $i < 3; $i++) {
+                for ($i = 0; $i < 4; $i++) {
                     include($root . "include/element-content-item.php");
                 } ?>
             </div>

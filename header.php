@@ -38,6 +38,13 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/theme-rwd.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/template.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="<?php echo $root; ?>assets/css/tourist.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/branch-single.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/wonder-single.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/brand-and-shop-single.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/mcc-hall.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/about.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/misc-tabs.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php echo $root; ?>assets/css/giftcard.css?v=<?php echo time(); ?>">
 
 
     <!-- JS:LIBRARY -->
@@ -60,7 +67,7 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                             <i class="ic ic-search c-white"></i>
                         </div>
 
-                        <div class="burger-icon">
+                        <div class="burger-icon header-menu-trigger">
                             <span class="burger-line burger-line-1"></span>
                             <span class="burger-line burger-line-2"></span>
                             <span class="burger-line burger-line-3"></span>
@@ -83,7 +90,7 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                                         href="javascript:;"
                                         data-menu-trigger="brandshop"
                                         class="fsw-btn header-menu-trigger
-                                        <?php echo in_array($page, ['branch-single.php', 'wonder.php', 'brand-and-shop.php', 'brand-and-shop-single.php']) ? 'current' : ''; ?>
+                                        <?php echo in_array($page, ['branch-single.php', 'wonder-single.php', 'brand-and-shop.php', 'brand-and-shop-single.php']) ? 'current' : ''; ?>
                                         ">BRAND & SHOP</a>
                                 </li>
                             </ul>
@@ -353,11 +360,11 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                         <h3 class="tab-title fsw-button">ABOUT US</h3>
                         <ul class="menu-content">
                             <li><a href="<?php echo $root; ?>directory.php">DIRECTORY & SERVICES</a></li>
-                            <li><a href="<?php echo $root; ?>retail-space.php">RETAIL SPACE SOLUTION</a></li>
+                            <li><a href="<?php echo $root; ?>misc.php">RETAIL SPACE SOLUTION</a></li>
                             <li><a href="<?php echo $root; ?>tourist.php">TOURIST</a></li>
-                            <li><a href="<?php echo $root; ?>contact.php">CONTACT US</a></li>
+                            <li><a href="<?php echo $root; ?>misc.php">CONTACT US</a></li>
                             <li><a href="<?php echo $root; ?>about.php">ABOUT US</a></li>
-                            <li><a href="<?php echo $root; ?>faq.php">FAQ</a></li>
+                            <li><a href="<?php echo $root; ?>misc.php">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -369,14 +376,14 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
         <div class="mobileMenu-container">
             <div class="content">
                 <div class="mobile-header">
-                    <div class="burger-icon">
+                    <div class="burger-icon header-menu-trigger">
                         <span class="burger-line burger-line-1"></span>
                         <span class="burger-line burger-line-2"></span>
                         <span class="burger-line burger-line-3"></span>
                     </div>
                 </div>
 
-                <div class="accordion-container c-white">
+                <div class="accordion-container toggle c-white">
                     <div class="accordion">
                         <h3 class="entry-title">WHAT'S ON</h3>
                         <div class="entry-panel">
@@ -410,15 +417,15 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                         <h3 class="entry-title">FOOD</h3>
                         <div class="entry-panel">
                             <ul class="accordion-links">
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">ALL BRANDS</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">FAST FOOD</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">WESTERN</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">THAI</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">JAPANESE</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">KOREAN</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">CHINESE</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">CAFE</a></li>
-                                <li><a href="<?php echo $root; ?>brand-and-shop.php">Gourmet Market</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">ALL BRANDS</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">FAST FOOD</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">WESTERN</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">THAI</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">JAPANESE</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">KOREAN</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">CHINESE</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">CAFE</a></li>
+                                <li><a href="<?php echo $root; ?>dining.php">Gourmet Market</a></li>
                             </ul>
                         </div>
                     </div>
@@ -428,11 +435,11 @@ $page_index = ($page == basename(dirname($_SERVER['PHP_SELF']), "/") || $page ==
                         <div class="entry-panel">
                             <ul class="accordion-links">
                                 <li><a href="<?php echo $root; ?>directory.php">DIRECTORY & SERVICES</a></li>
-                                <li><a href="<?php echo $root; ?>retail-space.php">RETAIL SPACE SOLUTION</a></li>
+                                <li><a href="<?php echo $root; ?>misc.php">RETAIL SPACE SOLUTION</a></li>
                                 <li><a href="<?php echo $root; ?>tourist.php">TOURIST</a></li>
-                                <li><a href="<?php echo $root; ?>contact.php">CONTACT US</a></li>
+                                <li><a href="<?php echo $root; ?>misc.php">CONTACT US</a></li>
                                 <li><a href="<?php echo $root; ?>about.php">ABOUT US</a></li>
-                                <li><a href="<?php echo $root; ?>faq.php">FAQ</a></li>
+                                <li><a href="<?php echo $root; ?>misc.php">FAQ</a></li>
                             </ul>
                         </div>
                     </div>

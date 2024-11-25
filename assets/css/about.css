@@ -1,0 +1,113 @@
+/* ABOUT ==================== */
+
+/* ABOUT HERO ==================== */
+.about-hero {
+    position: relative;
+}
+
+.about-hero .background-image {
+    position: relative;
+}
+
+.about-hero .background-image:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+
+.about-hero .background-image *:is(video, figure, picture, img) {
+    width: 100%;
+    height: auto;
+}
+
+.about-hero .text-content {
+    position: absolute;
+    left: 50%;
+    bottom: var(--spacing-2xl);
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    padding: var(--container-spacing);
+}
+
+.about-hero .text-content .title {
+    line-height: 0.6;
+    text-wrap: nowrap;
+    margin-bottom: var(--spacing-xs);
+}
+
+.about-hero .text-content .description {
+    text-wrap: balance;
+    max-width: 510px;
+    margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+    .about-hero .text-content {
+        bottom: var(--spacing-lg);
+    }
+
+    .about-hero .text-content .title {
+        text-wrap: wrap;
+    }
+}
+
+/* ABOUT INTRO ==================== */
+.about-intro .homepage-intro .tab-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: unset;
+    bottom: unset;
+}
+
+.about-intro .homepage-intro .tab-content::after {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+
+@media (991px < width < 1440px) {
+    .about-intro .homepage-intro .tab-hover li a {
+        font-size: 80px !important;
+        line-height: 0.6;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-intro .homepage-intro {
+        height: auto;
+        min-height: unset !important;
+    }
+}
+
+/* ABOUT HISTORY ==================== */
+.about-history .marquee {
+    display: inline-flex;
+    grid-gap: var(--spacing-xl);
+}
+
+.about-history .marquee .marquee-item {
+    font-size: 160px;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+    letter-spacing: -3px;
+}
+
+.about-history .happening-desc .description {
+    line-height: 0.84;
+    max-width: 75%;
+}
+
+@media (max-width: 991px) {
+    .about-history {
+        padding-top: 0;
+    }
+    .about-history .marquee .marquee-item {
+        font-size: 100px;
+    }
+}

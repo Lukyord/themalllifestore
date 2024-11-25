@@ -31,34 +31,34 @@
     --filter-white: brightness(0) invert(1);
 
     --font-heading: "DBAiry_Std", sans-serif;
-    --font-body: "GTFlexa_Ext", sans-serif;
+    --font-body: "GTFlexa_Ext", "DBAiry_Std", sans-serif;
     --weight-light: 300;
     --weight-regular: 400;
     --weight-medium: 500;
     --weight-bold: 700;
 
-    --font-size-button2: 14px;
-    --font-size-button2-th: 16px;
-    --font-size-button1: 16px;
-    --font-size-button1-th: var(--font-size-button1);
-    --font-size-body2: 12px;
-    --font-size-body2-th: 14px;
-    --font-size-body1: 14px;
-    --font-size-body1-th: 19px;
+    --font-size-body1: 19px;
+    --font-size-button2: 16px;
+    /* --font-size-button2-th: 16px; */
+    --font-size-button1: var(--font-size-body1);
+    /* --font-size-button1-th: var(--font-size-button1); */
+    --font-size-body2: 14px;
+    /* --font-size-body2-th: 14px; */
+    /* --font-size-body1-th: 19px; */
     --font-size-sub2: 12px;
-    --font-size-sub2-th: 14px;
+    /* --font-size-sub2-th: 14px; */
     --font-size-sub1: 18px;
-    --font-size-sub1-th: var(--font-size-sub1);
+    /* --font-size-sub1-th: var(--font-size-sub1); */
     --font-size-h5: 20px;
-    --font-size-h5-th: var(--font-size-h5);
+    /* --font-size-h5-th: var(--font-size-h5); */
     --font-size-h4: 26px;
-    --font-size-h4-th: var(--font-size-h4);
+    /* --font-size-h4-th: var(--font-size-h4); */
     --font-size-h3: 42px;
-    --font-size-h3-th: var(--font-size-h3);
+    /* --font-size-h3-th: var(--font-size-h3); */
     --font-size-h2: 96px;
-    --font-size-h2-th: var(--font-size-h2);
+    /* --font-size-h2-th: var(--font-size-h2); */
     --font-size-h1: 160px;
-    --font-size-h1-th: var(--font-size-h1);
+    /* --font-size-h1-th: var(--font-size-h1); */
 
     --icon-size: 20px;
     --icon-size-lg: 24px;
@@ -100,7 +100,10 @@
     --weight-body: var(--weight-light);
     --font-size-body: var(--font-size-sm);
     --line-height-body: var(--line-height-md);
-    --input-height: 50px;
+    --input-height: 40px;
+    --input-spacing-x: var(--spacing-2xs);
+    --input-spacing-y: var(--spacing-2xs);
+    --input-border: 1px solid #c4c4c4;
     --button-height: var(--input-height);
     --radius: 4px;
     --opacity: 0.5;
@@ -385,6 +388,7 @@
 .w-100 {
     width: 100% !important;
 }
+
 .h-100 {
     height: 100% !important;
 }
@@ -400,11 +404,11 @@
     overflow: hidden;
 }
 ::-moz-selection {
-    background: var(--color-white);
+    background: var(--color-gray-light);
     color: var(--color-body-bg);
 }
 ::selection {
-    background: var(--color-white);
+    background: var(--color-gray-light);
     color: var(--color-body-bg);
 }
 
@@ -1151,21 +1155,21 @@ select,
 /*Medium devices (tablets, less than 992px)*/
 @media (max-width: 991.98px) {
     :root {
-        --font-size-button2-th: 14px;
-        --font-size-button2: 12px;
-        --font-size-button-th: 14px;
-        --font-size-button: 14px;
-        --font-size-body2-th: 13px;
-        --font-size-body2: 10px;
-        --font-size-body1-th: 18px;
-        --font-size-body1: 12px;
-        --font-size-sub2-th: 10px;
+        /* --font-size-button2-th: 14px; */
+        --font-size-button2: 14px;
+        /* --font-size-button-th: 14px; */
+        --font-size-button1: 14px;
+        /* --font-size-body2-th: 13px; */
+        --font-size-body2: 13px;
+        /* --font-size-body1-th: 18px; */
+        --font-size-body1: 17px;
+        /* --font-size-sub2-th: 10px; */
         --font-size-sub2: 12px;
-        --font-size-sub1-th: 14px;
+        /* --font-size-sub1-th: 14px; */
         --font-size-sub1: 14px;
         --font-size-h5: 16px;
-        --font-size-h4-th: 26px;
-        --font-size-h4: 22px;
+        /* --font-size-h4-th: 26px; */
+        --font-size-h4: 26px;
         --font-size-h3: 34px;
         --font-size-h2: 54px;
         --font-size-h1: 100px;
@@ -1196,16 +1200,80 @@ select,
 /* End of Responsive */
 
 /* ========== FORM ========== */
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--spacing-md);
+    row-gap: var(--spacing-sm);
+}
+
+.fields-title {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-h5);
+    font-family: var(--font-heading);
+    line-height: 0.8;
+}
+
+.fields-title:not(:first-child) {
+    margin-top: var(--spacing-lg);
+}
+
+.file-upload-button {
+    border-radius: 33px;
+    background: #f0f0f0;
+    padding: var(--spacing-3xs) var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.file-upload-action {
+    display: flex;
+    align-items: center;
+    grid-gap: var(--spacing-xs);
+}
+
+.file-upload-action p {
+    font-family: var(--font-heading);
+    color: #606060;
+}
+
+.file-upload-input {
+    padding: 0;
+    border: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.input.filled .file-upload-input {
+    height: 100%;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (min-width: 992px) {
+    .field.w-full {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 991px) {
+    .fields {
+        grid-template-columns: 1fr;
+        row-gap: var(--spacing-xs);
+    }
+
+    .fields-title {
+        font-size: var(--font-size-h4);
+    }
+}
+
 *:is(input, textarea, select) {
-    --input-spacing-x: var(--spacing-xs);
-    --input-spacing-y: var(--spacing-3xs);
     background: none;
     border-radius: 0;
-    border: 0;
-    border-bottom: var(--input-border);
-    font-family: var(--font-body);
+    border: var(--input-border);
+    font-family: var(--font-heading);
     font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-button2);
+    font-size: var(--font-size-body1);
     line-height: normal;
     text-transform: inherit;
     text-align: left;
@@ -1216,7 +1284,30 @@ select,
     width: 100%;
     height: var(--input-height);
     padding: var(--input-spacing-y) var(--input-spacing-x);
-    padding-left: 0;
+}
+
+textarea {
+    resize: none;
+    display: block;
+    overflow: auto;
+    max-width: 100%;
+    min-height: calc(var(--input-height) * 3);
+}
+
+input::placeholder {
+    color: var(--color-gray);
+}
+
+input[type="date"] {
+    color: var(--color-gray);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.3;
+}
+
+.input.filled input[type="date"] {
+    color: var(--color-black);
 }
 
 .input {
@@ -1231,15 +1322,21 @@ select,
     border-radius: 0;
     position: relative;
     display: block;
-    font-family: var(--font-button2);
+    font-family: var(--font-heading);
     font-weight: var(--font-weight-regular);
-    font-size: inherit;
+    font-size: var(--font-size-body1);
     text-transform: none;
-    color: rgba(255, 255, 255, 0.5);
-    opacity: 0.5;
+    color: var(--color-black);
+    opacity: 1;
 }
 .c-white .label {
     color: inherit;
+}
+
+.input .label:has(+ *:required, + .select select[required])::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
 }
 .label:not(.anim):not(:last-child) {
     margin-bottom: var(--spacing-3xs);

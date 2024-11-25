@@ -6,7 +6,7 @@
 </div>
 <main id="main" class="page-main page-homepage">
 	<div class="homepage-intro">
-		<div class="tab-container">
+		<div class="tab-container no-wow">
 			<div class="tab-wrapper">
 				<div id="trigger_logo"></div>
 				<ul class="tab tab-hover">
@@ -31,8 +31,8 @@
 							'intro_img_mb' => './assets/img/design/intro-banner3-mb.jpg',
 						),
 						array(
-							'intro_id' =>  'thapra',
-							'intro_name' => 'THAPRA',
+							'intro_id' =>  'thaphra',
+							'intro_name' => 'THAPHRA',
 							'intro_img' => './assets/img/design/intro-banner4.jpg',
 							'intro_img_mb' => './assets/img/design/intro-banner4-mb.jpg',
 						),
@@ -101,7 +101,7 @@
 							'./assets/img/design/slide-logo8.png',
 							'./assets/img/design/slide-logo9.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide2-bg.jpg',
@@ -114,7 +114,7 @@
 							'./assets/img/design/slide-logo5.png',
 							'./assets/img/design/slide-logo6.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide4-bg.jpg',
@@ -130,7 +130,7 @@
 							'./assets/img/design/slide-logo13.png',
 							'./assets/img/design/slide-logo14.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide5-bg.jpg',
@@ -143,7 +143,7 @@
 							'./assets/img/design/slide-logo3.png',
 							'./assets/img/design/slide-logo4.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide7-bg.jpg',
@@ -156,7 +156,7 @@
 							'./assets/img/design/slide-logo12.png',
 							'./assets/img/design/slide-logo13.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide1-bg.jpg',
@@ -171,7 +171,7 @@
 							'./assets/img/design/slide-logo3.png',
 							'./assets/img/design/slide-logo4.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 					array(
 						'slide_bg' => './assets/img/design/slide6-bg.jpg',
@@ -183,7 +183,7 @@
 						'slide_logo' => array(
 							'./assets/img/design/slide-logo15.png',
 						),
-						'slide_link' => $root . 'wonder.php'
+						'slide_link' => $root . 'wonder-single.php'
 					),
 				);
 				foreach ($slide_arr as $index => $slide):
@@ -714,7 +714,7 @@
 					],
 				],
 			],
-			"thapra" => [
+			"thaphra" => [
 				"5 MAR" => [
 					[
 						'happening_img' => './assets/img/design/happening-img1.jpg',
@@ -888,7 +888,7 @@
 							"bangkae" => "BANGKAE",
 							"bangkapi" => "BANGKAPI",
 							"ngamwongwan" => "NGAMWONGWAN",
-							"thapra" => "THAPRA",
+							"thaphra" => "THAPHRA",
 							"korat" => "KORAT",
 						];
 						foreach ($branch_arr as $branch_id => $branch_name):
@@ -2373,8 +2373,8 @@
 							),
 						),
 						array(
-							'branch_id' 	=> 'thapra',
-							'branch_name' 	=> 'THAPRA',
+							'branch_id' 	=> 'thaphra',
+							'branch_name' 	=> 'THAPHRA',
 							'branch_floor'	=> array(
 								array(
 									'floor_id' => 'bfloor',
@@ -2407,7 +2407,7 @@
 												'SRITHONG GOLDS',
 												'SUI SENG HENG',
 												'VGOLD YAOWARAT',
-												'YAOWARAT THAPRA',
+												'YAOWARAT THAPHRA',
 												'AKKHRAMANI',
 												'JUBILEE DIAMOND',
 												'KANJANA DIAMOND',
@@ -3219,7 +3219,7 @@
 				'update_url' => './content2.php',
 			],
 		],
-		"thapra" => [
+		"thaphra" => [
 			[
 				'update_img' => './assets/img/design/content1-cover.jpg',
 				'update_img_hover' => './assets/img/design/content1-cover.jpg',

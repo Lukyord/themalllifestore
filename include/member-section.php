@@ -1,4 +1,4 @@
-<div class="member-section">
+<section class="member-section">
     <div class="wrapper">
         <div class="section-heading a-center wow fadeIn">
             <h2 class="fsw-h2 c-white">MEMBERSHIP & PRIVILEGE</h2>
@@ -21,7 +21,8 @@
                         array(
                             'member_title' => 'GIFT CARD',
                             'member_img' => './assets/img/design/member-bg3.jpg',
-                            'member_url' => 'https://www.themall.co.th/th/giftcard',
+                            // 'member_url' => 'https://www.themall.co.th/th/giftcard',
+                            "member_url" => $root . "giftcard.php",
                         ),
                         array(
                             'member_title' => 'TOURIST PRIVILEGE',
@@ -46,4 +47,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

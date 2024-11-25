@@ -16,15 +16,15 @@
                     </ul>
                     <ul class="footer-menu footer-menu2">
                         <li><a href="<?php echo $root; ?>directory.php">DIRECTORY & SERVICES</a></li>
-                        <li><a href="<?php echo $root; ?>retail-space.php">RETAIL SPACE SOLUTION</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">RETAIL SPACE SOLUTION</a></li>
                         <li><a href="<?php echo $root; ?>tourist.php">TOURIST</a></li>
-                        <li><a href="<?php echo $root; ?>contact.php">CONTACT US</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">CONTACT US</a></li>
                         <li><a href="<?php echo $root; ?>about.php">ABOUT US</a></li>
-                        <li><a href="<?php echo $root; ?>faq.php">FAQ</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">FAQ</a></li>
                     </ul>
                     <ul class="footer-menu footer-menu3">
                         <li><a href="#outer">M CARD</a></li>
-                        <li><a href="#outer">GIFT CARD</a></li>
+                        <li><a href="<?php echo $root; ?>giftvard.php">GIFT CARD</a></li>
                         <li><a href="#chat-shop">CHAT & SHOP</a></li>
                         <li><a href="<?php echo $root; ?>privacy.php">PRIVACY POLICY</a></li>
                         <li><a href="contractor-policy">CONTRACTOR PRIVACY POLICY</a></li>
@@ -36,7 +36,7 @@
                         <i class="ic ic-facebook"></i>
                         <ul class="footer-menu footer-menu4">
                             <li><a target="_blank" href="https://www.facebook.com/themallshoppingcenter/">THE MALL THAILAND</a></li>
-                            <li><a target="_blank" href="https://www.facebook.com/themalllifestorethapra/">THE MALL LIFESTORE THAPRA</a></li>
+                            <li><a target="_blank" href="https://www.facebook.com/themalllifestorethaphra/">THE MALL LIFESTORE THAPHRA</a></li>
                             <li><a target="_blank" href="https://www.facebook.com/themalllifestorengamwongwan/">THE MALL LIFESTORE NGAMWONGWAN</a></li>
                             <li><a target="_blank" href="https://www.facebook.com/themalllifestorebangkae/">THE MALL LIFESTORE BANGKAE</a></li>
                             <li><a target="_blank" href="https://www.facebook.com/themalllifestorebangkapi/">THE MALL LIFESTORE BANGKAPI</a></li>
@@ -44,7 +44,7 @@
                         </ul>
                         <i class="ic ic-line"></i>
                         <ul class="footer-menu footer-menu4">
-                            <li><a target="_blank" href="#outer">THE MALL LIFESTORE THAPRA</a></li>
+                            <li><a target="_blank" href="#outer">THE MALL LIFESTORE THAPHRA</a></li>
                             <li><a target="_blank" href="#outer">THE MALL LIFESTORE NGAMWONGWAN</a></li>
                             <li><a target="_blank" href="#outer">THE MALL LIFESTORE BANGKAE</a></li>
                             <li><a target="_blank" href="#outer">THE MALL LIFESTORE BANGKAPI</a></li>
@@ -93,15 +93,15 @@
                     </ul>
                     <ul class="footer-menu">
                         <li><a href="<?php echo $root; ?>directory.php">DIRECTORY & SERVICES</a></li>
-                        <li><a href="<?php echo $root; ?>retail-space.php">RETAIL SPACE SOLUTION</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">RETAIL SPACE SOLUTION</a></li>
                         <li><a href="<?php echo $root; ?>tourist.php">TOURIST</a></li>
-                        <li><a href="<?php echo $root; ?>contact.php">CONTACT US</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">CONTACT US</a></li>
                         <li><a href="<?php echo $root; ?>about.php">ABOUT US</a></li>
-                        <li><a href="<?php echo $root; ?>faq.php">FAQ</a></li>
+                        <li><a href="<?php echo $root; ?>misc.php">FAQ</a></li>
                     </ul>
                     <ul class="footer-menu">
                         <li><a href="#outer">M CARD</a></li>
-                        <li><a href="#outer">GIFT CARD</a></li>
+                        <li><a href="<?php echo $root; ?>giftvard.php">GIFT CARD</a></li>
                         <li><a href="#chat-shop">CHAT & SHOP</a></li>
                         <li><a href="<?php echo $root; ?>privacy.php">PRIVACY POLICY</a></li>
                         <li><a href="contractor-policy">CONTRACTOR PRIVACY POLICY</a></li>
@@ -122,7 +122,7 @@
                 <div id="facebook" class="socialMobile-group">
                     <ul class="footer-menu social-menu">
                         <li><a target="_blank" href="https://www.facebook.com/themallshoppingcenter/">THE MALL THAILAND</a></li>
-                        <li><a target="_blank" href="https://www.facebook.com/themalllifestorethapra/">THE MALL LIFESTORE THAPRA</a></li>
+                        <li><a target="_blank" href="https://www.facebook.com/themalllifestorethaphra/">THE MALL LIFESTORE THAPHRA</a></li>
                         <li><a target="_blank" href="https://www.facebook.com/themalllifestorengamwongwan/">THE MALL LIFESTORE NGAMWONGWAN</a></li>
                         <li><a target="_blank" href="https://www.facebook.com/themalllifestorebangkae/">THE MALL LIFESTORE BANGKAE</a></li>
                         <li><a target="_blank" href="https://www.facebook.com/themalllifestorebangkapi/">THE MALL LIFESTORE BANGKAPI</a></li>
@@ -131,7 +131,7 @@
                 </div>
                 <div id="line" class="socialMobile-group">
                     <ul class="footer-menu social-menu">
-                        <li><a target="_blank" href="#outer">THE MALL LIFESTORE THAPRA</a></li>
+                        <li><a target="_blank" href="#outer">THE MALL LIFESTORE THAPHRA</a></li>
                         <li><a target="_blank" href="#outer">THE MALL LIFESTORE NGAMWONGWAN</a></li>
                         <li><a target="_blank" href="#outer">THE MALL LIFESTORE BANGKAE</a></li>
                         <li><a target="_blank" href="#outer">THE MALL LIFESTORE BANGKAPI</a></li>
@@ -190,11 +190,17 @@
 <script src="<?php echo $root; ?>assets/plugin/gsap/gsap.min.js"></script>
 <script src="<?php echo $root; ?>assets/plugin/gsap/ScrollTrigger.min.js"></script>
 <script src="<?php echo $root; ?>assets/plugin/gsap/TweenMax.min.js"></script>
+<script src="<?php echo $root; ?>assets/plugin/rellax/rellax.min.js"></script>
+<script src="<?php echo $root; ?>assets/plugin/imagesLoaded/imagesLoaded.pkgd.min.js"></script>
+<script src="<?php echo $root; ?>assets/plugin/masonry/masonry.pkgd.min.js"></script>
+
 
 <!-- JS:CONFIG -->
 <script src="<?php echo $root; ?>assets/js/theme.js?v=<?php echo time(); ?>"></script>
 <script src="<?php echo $root; ?>assets/js/template.js?v=<?php echo time(); ?>"></script>
 <script src="<?php echo $root; ?>assets/js/template-single.js?v=<?php echo time(); ?>"></script>
+<script src="<?php echo $root; ?>assets/js/misc.js?v=<?php echo time(); ?>"></script>
+<script src="<?php echo $root; ?>assets/js/giftcard.js?v=<?php echo time(); ?>"></script>
 
 </body>
 
