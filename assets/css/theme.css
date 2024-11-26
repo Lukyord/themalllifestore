@@ -392,7 +392,7 @@ header .header-wrapper {
 .header-container {
     padding: var(--spacing-2xs) var(--container-padding);
     display: grid;
-    grid-template-columns: 25% 1fr 25%;
+    grid-template-columns: min(25%, 200px) 1fr min(25%, 200px);
     height: 100%;
     transition: var(--duration) var(--timing-function);
 }
@@ -897,11 +897,17 @@ html.no-touchevents .footer-menu a:hover {
     max-width: 50vw;
     max-height: 90%;
 }
+
+.slide-section .slide-container .logo-image {
+    height: 78px;
+    display: flex;
+    align-items: center;
+}
+
 .slide-section .slide-container .slide-logo {
     max-width: 100px !important;
     max-height: 78px;
     width: auto;
-    height: auto;
     object-fit: contain;
     object-position: center;
 }
@@ -1030,6 +1036,7 @@ html.no-touchevents .footer-menu a:hover {
 .grid-content.grid-promo .image {
     width: 100%;
     aspect-ratio: 1;
+    position: relative;
 }
 .grid-content.grid-promo .image img {
     width: 100%;
@@ -1037,6 +1044,16 @@ html.no-touchevents .footer-menu a:hover {
     object-fit: cover;
     object-position: center;
 }
+
+.grid-content.grid-promo .image .title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: min(7.4626865672vw, var(--spacing-lg));
+    color: var(--color-white);
+    text-wrap: nowrap;
+}
+
 .promotion-wrapper {
     display: block;
     position: relative;
@@ -1062,8 +1079,17 @@ html.no-touchevents .footer-menu a:hover {
 .happening-item .grid-content.grid2 > .grid-context {
     background-color: var(--color-body);
 }
+
 .happening-section {
     padding: var(--spacing-2lg) 0;
+}
+
+.happening-section .swiper-button-next {
+    right: var(--spacing-2xs);
+}
+
+.happening-section .swiper-button-prev {
+    left: var(--spacing-2xs);
 }
 
 .happening-section.tab-container {
@@ -1081,7 +1107,7 @@ html.no-touchevents .footer-menu a:hover {
 .happening-desc {
     width: 100%;
     height: 100%;
-    padding: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-2xl);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1269,9 +1295,19 @@ html.no-touchevents .footer-menu a:hover {
     color: var(--color-gray);
 }
 
+.mapsContent-item .tab-content .media-wrapper {
+    width: 100%;
+    aspect-ratio: 1.2867981791;
+}
+
 .update-section {
-    overflow: hidden;
     padding: var(--spacing-2lg) 0;
+}
+
+.update-section .tab-content {
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(-1 * var(--container-padding)) !important;
 }
 .swiper.swiper-update {
     overflow: visible;
@@ -1819,7 +1855,7 @@ html.no-touchevents .footer-menu a:hover {
 
     .swiper-happeningThumb .swiper-slide {
         padding: 0 var(--spacing-sm);
-        width: fit-content;
+        width: 80px;
     }
 
     .select:has(.branch-select, .happening-select) {

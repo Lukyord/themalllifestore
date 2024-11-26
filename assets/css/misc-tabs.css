@@ -27,6 +27,10 @@
     padding-right: var(--spacing-xs);
 }
 
+.misc-tabs .tabs .swiper-slide:last-child {
+    padding-right: 0;
+}
+
 .misc-tabs .tabs .tab-link {
     font-size: var(--font-size-button2);
     font-family: var(--font-body);

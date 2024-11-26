@@ -21,7 +21,9 @@
                         <?php
                         foreach ($slide['slide_logo'] as $logo):
                         ?>
-                            <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
+                            <div class="logo-image">
+                                <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
+                            </div>
                         <?php
                         endforeach;
                         ?>

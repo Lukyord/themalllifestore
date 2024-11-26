@@ -1058,7 +1058,8 @@ select,
     grid-row: 1;
 }
 .tab-content,
-.tabdata-content {
+.tabdata-content,
+.map-content {
     margin: 0 !important;
     position: relative;
     height: 0;
@@ -1070,7 +1071,8 @@ select,
     min-height: 0;
 }
 .tab-content.active,
-.tabdata-content.active {
+.tabdata-content.active,
+.map-content.active {
     height: auto;
     opacity: 1;
     overflow: visible;

@@ -203,7 +203,7 @@
 }
 
 .solid-btn.share:hover {
-    width: 120px;
+    width: 100px;
 }
 
 .solid-btn.share:hover > *:not(.share-buttons) {
@@ -323,10 +323,11 @@ html.no-touchevents .solid-btn.share .share-buttons a:hover {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        margin-bottom: var(--spacing-3xs);
     }
 
     .grid-content-template .content-item .text-content .branch-available {
-        margin-top: calc(-1 * var(--spacing-2xs));
+        margin-top: calc(-1 * var(--spacing-3xs));
     }
 
     .content-item-small .text-content .item-title {
@@ -411,7 +412,8 @@ html.no-touchevents .solid-btn.share .share-buttons a:hover {
 }
 
 .template-banner-slide .thumbs .swiper-slide .image {
-    height: 5vw;
+    aspect-ratio: 1.6388888889;
+    width: 118px;
 }
 
 .template-banner-slide .thumbs .swiper-slide .image * {
@@ -1111,6 +1113,10 @@ html.no-touchevents .page-nav .swiper-slide .page-nav-link:hover {
         height: 61.4583333333vw;
     }
 
+    .parallax-sticky .sticky .text {
+        margin: 100px auto;
+    }
+
     .parallax-sticky .sticky .image-1 {
         top: 5%;
         left: 2%;
@@ -1163,7 +1169,7 @@ html.no-touchevents .page-nav .swiper-slide .page-nav-link:hover {
     .parallax-sticky .sticky .text {
         padding-top: 0;
         width: 60.5128205128%;
-        margin: 0;
+        margin: 50px 0;
     }
 
     .parallax-sticky .sticky .image-1 {
@@ -1248,7 +1254,7 @@ html.no-touchevents .page-nav .swiper-slide .page-nav-link:hover {
 }
 
 .page-template2 .banner-hero .logo-row > img {
-    max-height: 45px;
+    height: 45px;
     max-width: 105px;
     object-position: center;
     object-fit: contain;

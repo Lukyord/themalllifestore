@@ -60,7 +60,9 @@
                                 ];
                                 foreach ($slide_logo as $logo):
                                 ?>
-                                    <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
+                                    <div class="logo-image">
+                                        <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
+                                    </div>
                                 <?php
                                 endforeach;
                                 ?>
@@ -97,21 +99,28 @@
             <div class="text">
                 <h2 class="fsw-h2 c-theme-red">ENJOY <br class="show-md">THE EXCITEMENT</h2>
                 <p>Year-round happening event and activation at our spacious event space and mcc hall Year-round happening event and activation at our spacious event space and mcc hall Year-round happening event and activation at our spacious event space and mcc hall</p>
-                <div class="logo-row">
-                    <?php
-                    $slide_logo = [
-                        './assets/img/design/slide-logo1.png',
-                        './assets/img/design/slide-logo2.png',
-                        './assets/img/design/slide-logo3.png',
-                        './assets/img/design/slide-logo4.png',
-
-                    ];
-                    foreach ($slide_logo as $logo):
-                    ?>
-                        <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
-                    <?php
-                    endforeach;
-                    ?>
+                <div class="logo-marquee-container">
+                    <div class="logo-marquee large">
+                        <div class="logo-row">
+                            <?php
+                            $slide_logo = [
+                                './assets/img/design/slide-logo1.png',
+                                './assets/img/design/slide-logo2.png',
+                                './assets/img/design/slide-logo3.png',
+                                './assets/img/design/slide-logo4.png',
+                                './assets/img/design/slide-logo5.png',
+                                './assets/img/design/slide-logo6.png',
+                            ];
+                            foreach ($slide_logo as $logo):
+                            ?>
+                                <div class="logo-image">
+                                    <img class="slide-logo" src="<?php echo $logo; ?>" alt="">
+                                </div>
+                            <?php
+                            endforeach;
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
 

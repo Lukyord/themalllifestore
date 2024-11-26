@@ -702,11 +702,25 @@ jQuery(function ($) {
         // $("html,body").animate({scrollTop: $(elem).offset().top - h }, 800, 'linear');
     }
 
+    function showTabWithinContainer(tabId, container) {
+        var tabContainer = $(container);
+
+        tabContainer
+            .find(".tab-content")
+            .filter(function () {
+                return !$(this).hasClass("nested-tab");
+            })
+            .removeClass("active");
+
+        tabContainer.find(`.tab-content${tabId}`).addClass("active");
+    }
+
     $(".tab-hover .tab-hover-link").hover(function (e) {
         e.preventDefault();
         var _id = $(this).data("tab-id");
 
-        showTab(_id);
+        const tabContainer = $(this).closest(".homepage-intro");
+        showTabWithinContainer(_id, tabContainer);
 
         $(".tab-hover .tab-hover-link").removeClass("active");
 
@@ -744,21 +758,8 @@ jQuery(function ($) {
 
             var _id = next.find("a").data("tab-id");
 
-            function showTabWithinContainer(tabId, container) {
-                var tabContainer = $(container);
-
-                tabContainer
-                    .find(".tab-content")
-                    .filter(function () {
-                        return !$(this).hasClass("nested-tab");
-                    })
-                    .removeClass("active");
-
-                tabContainer.find(`.tab-content${tabId}`).addClass("active");
-            }
-
             const tabContainer = current.closest(".homepage-intro");
-            showTabWithinContainer(_id, tabContainer); // Change the tab content for the next ta
+            showTabWithinContainer(_id, tabContainer);
 
             next.find("a").addClass("active");
 
@@ -1973,6 +1974,22 @@ jQuery(function ($) {
 
             _this.imagesLoaded().progress(function () {
                 _this.masonry("layout");
+            });
+        });
+    }
+});
+
+// DIRECTORY
+jQuery(function ($) {
+    if ($(".mapsContent-container")) {
+        $(".mapsContent-container").each(function () {
+            $(".map-content-trigger").on("click", function () {
+                const mapContainer = $(this).closest(".map-container");
+                const mapId = $(this).data("map-id");
+
+                mapContainer.find(".map-content").removeClass("active");
+
+                mapContainer.find(`.map-content#${mapId}`).addClass("active");
             });
         });
     }

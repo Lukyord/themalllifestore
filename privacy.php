@@ -7,7 +7,7 @@
         <div class="content-wrapper">
             <div class="tab-container no-wow">
                 <div class="tabs">
-                    <div class="swiper auto">
+                    <div class="swiper auto insufficient">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a href="#privacy-policy" class="tab-link backtotop active">PRIVACY POLICY</a>
