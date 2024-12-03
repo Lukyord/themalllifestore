@@ -247,6 +247,10 @@ html.no-touchevents .solid-btn.share .share-buttons a:hover {
     object-position: center;
 }
 
+html.no-touchevents .content-item-small:hover .image img {
+    scale: 1.05;
+}
+
 .content-item-small .text-content {
     margin-top: var(--spacing-3xs);
     display: flex;

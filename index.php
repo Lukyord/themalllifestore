@@ -213,121 +213,129 @@
 			<div class="wrapper">
 				<div class="grid-content grid-promo">
 					<div class="grid-context wow fadeIn">
+						<?php
+						/*
 						<div class="image">
 							<a href="<?php echo $root ?>promotions.php" class="link-overlay">&nbsp;</a>
 							<img src="./assets/img/design/promotion-cover2.jpg" alt="Promotion Cover 1">
 							<h4 class="title fsw-h4 font-body">CREDIT CARD PROMOTION</h4>
 						</div>
+						*/
+						?>
 						<?php
-						// $promo_title = 'STORE PROMOTION';
-						// $promo_cover = './assets/img/design/promotion-cover1.jpg';
-						// $promo_grid = array(
-						// 	array(
-						// 		'branch_id' => 'all',
-						// 		'branch_title' => 'ALL BRANCHES',
-						// 		'promo_items' => array(
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb1.jpg',
-						// 				'promo_title' => 'Beauty Hall Summer Cation 2024',
-						// 				'promo_desc' => 'WOW EXTRA BONUS สวยคุ้มไม่มีอ้าว ดีลว้าวไม่มีหยุด',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/641',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb2.jpg',
-						// 				'promo_title' => 'Summer Cation Pay Day',
-						// 				'promo_desc' => 'แบรนด์เนมลดฉ่ำสูงสุด 70%',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/636',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb3.jpg',
-						// 				'promo_title' => 'SportsMall Summer Cation',
-						// 				'promo_desc' => 'ต้อนรับซัมเมอร์ กับไอเท็มสายฟิต พร้อมโปรสุดฮอต ให้ร้อนนี้ว้าวไม่มีหยุด',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/662',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb4.jpg',
-						// 				'promo_title' => 'Gourmet Eats x K bank',
-						// 				'promo_desc' => 'สะสมใบเสร็จ ณ ร้านอาหารภายในแผนก กูร์เมต์ อีทส์ ที่โซน Food Hall / Take Home Shop / Take Home Local (ยกเว้น Food Court และ ร้านอาหารในศูนย์ฯ) ครบ 800 บาทขึ้นไป/วัน',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/650',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb5.jpg',
-						// 				'promo_title' => 'THE MALL LIFESTORE SUMMER-CATION HEATWAVE HITTING',
-						// 				'promo_desc' => 'สมาชิก M CARD  แจก M POINT ทุกร้านค้าในศูนย์การค้าฯทุก 25 บาท รับ 1 คะแนน สำหรับไอที แก็ดเจ็ท, เฟอร์นิเจอร์ คลินิกความงาม และสถาบันการศึกษา ทุก 50 บาท รับ 1 คะแนน',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/625',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb6.jpg',
-						// 				'promo_title' => 'Watch Galleria SUMMER-CATION',
-						// 				'promo_desc' => 'เฟียสไม่มีอ้าว ว้าวไม่มีหยุด ลดสูงสุด 60%',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/645',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/promotion-thumb7.jpg',
-						// 				'promo_title' => 'สมัครบัตร Bangkok Bank M Visa รายใหม่',
-						// 				'promo_desc' => 'สมัครบัตร Bangkok Bank M Visa รายใหม่ รับกระเป๋าเดินทาง Caggioni ขนาด 20 นิ้ว จำนวน 1 ใบ มูลค่า 3,990 บาท*',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/540',
-						// 			),
-						// 		),
-						// 	),
-						// );
-						// include($root . "./include/promo-grid.php");
+						$promo_title = 'STORE PROMOTION';
+						$promo_cover = './assets/img/design/promotion-cover1.jpg';
+						$promo_grid = array(
+							array(
+								'branch_id' => 'all',
+								'branch_title' => 'ALL BRANCHES',
+								'promo_items' => array(
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb1.jpg',
+										'promo_title' => 'Beauty Hall Summer Cation 2024',
+										'promo_desc' => 'WOW EXTRA BONUS สวยคุ้มไม่มีอ้าว ดีลว้าวไม่มีหยุด',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/641',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb2.jpg',
+										'promo_title' => 'Summer Cation Pay Day',
+										'promo_desc' => 'แบรนด์เนมลดฉ่ำสูงสุด 70%',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/636',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb3.jpg',
+										'promo_title' => 'SportsMall Summer Cation',
+										'promo_desc' => 'ต้อนรับซัมเมอร์ กับไอเท็มสายฟิต พร้อมโปรสุดฮอต ให้ร้อนนี้ว้าวไม่มีหยุด',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/662',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb4.jpg',
+										'promo_title' => 'Gourmet Eats x K bank',
+										'promo_desc' => 'สะสมใบเสร็จ ณ ร้านอาหารภายในแผนก กูร์เมต์ อีทส์ ที่โซน Food Hall / Take Home Shop / Take Home Local (ยกเว้น Food Court และ ร้านอาหารในศูนย์ฯ) ครบ 800 บาทขึ้นไป/วัน',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/650',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb5.jpg',
+										'promo_title' => 'THE MALL LIFESTORE SUMMER-CATION HEATWAVE HITTING',
+										'promo_desc' => 'สมาชิก M CARD  แจก M POINT ทุกร้านค้าในศูนย์การค้าฯทุก 25 บาท รับ 1 คะแนน สำหรับไอที แก็ดเจ็ท, เฟอร์นิเจอร์ คลินิกความงาม และสถาบันการศึกษา ทุก 50 บาท รับ 1 คะแนน',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/625',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb6.jpg',
+										'promo_title' => 'Watch Galleria SUMMER-CATION',
+										'promo_desc' => 'เฟียสไม่มีอ้าว ว้าวไม่มีหยุด ลดสูงสุด 60%',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/645',
+									),
+									array(
+										'promo_img' => './assets/img/design/promotion-thumb7.jpg',
+										'promo_title' => 'สมัครบัตร Bangkok Bank M Visa รายใหม่',
+										'promo_desc' => 'สมัครบัตร Bangkok Bank M Visa รายใหม่ รับกระเป๋าเดินทาง Caggioni ขนาด 20 นิ้ว จำนวน 1 ใบ มูลค่า 3,990 บาท*',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/540',
+									),
+								),
+							),
+						);
+						include($root . "./include/promo-grid.php");
 						?>
 					</div>
 					<div class="grid-context wow fadeIn">
+						<?php
+						/*
 						<div class="image">
 							<a href="<?php echo $root ?>promotions.php" class="link-overlay">&nbsp;</a>
 							<img src="./assets/img/design/promotion-cover1.jpg" alt="Promotion Cover 2">
 							<h4 class="title fsw-h4 font-body">STORE PROMOTION</h4>
 						</div>
+						*/
+						?>
 						<?php
-						// $promo_title = 'CREDIT CARD PROMOTION';
-						// $promo_cover = './assets/img/design/promotion-cover2.jpg';
-						// $promo_grid = array(
-						// 	array(
-						// 		'branch_id' => 'all',
-						// 		'branch_title' => 'ALL BRANCHES',
-						// 		'promo_items' => array(
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb1.jpg',
-						// 				'promo_title' => 'Bangkok Bank M Summer cation',
-						// 				'promo_desc' => 'สิทธิพิเศษสำหรับบัตรเครดิต Bangkok Bank M Visa',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/655',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb2.jpg',
-						// 				'promo_title' => 'BBL แบ่งชำระ 0% สูงสุด 10 เดือน ทุกชิ้น + เครดิตเงินคืน 12%',
-						// 				'promo_desc' => 'สิทธิพิเศษบัตรเครดิตธนาคารกรุงเทพ',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/640',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb3.jpg',
-						// 				'promo_title' => 'Beauty Hall Summer Cation',
-						// 				'promo_desc' => 'Beauty Hall Summer Cation รับเครดิตเงินคืนสูงสุด 18,000 บาท + แลกรับเครดิตเงินคืน 12%',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/673',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb4.jpg',
-						// 				'promo_title' => 'CardX Summer cation',
-						// 				'promo_desc' => 'สิทธิพิเศษบัตรเครดิต CardX',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/656',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb5.jpg',
-						// 				'promo_title' => 'UOB Summer cation',
-						// 				'promo_desc' => 'สิทธิพิเศษเฉพาะสมาชิกบัตรเครดิต UOB และบัตรเครดิต TMRW',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/652',
-						// 			),
-						// 			array(
-						// 				'promo_img' => './assets/img/design/card-thumb6.jpg',
-						// 				'promo_title' => 'บัตรเครดิต BBL M แบ่งชำระ 0% สูงสุด 10 เดือน ทุกชิ้น',
-						// 				'promo_desc' => 'สิทธิพิเศษสำหรับบัตรเครดิต Bangkok Bank M Visa',
-						// 				'promo_url' => 'https://themalllifestore.themall.co.th/promotion/646',
-						// 			),
-						// 		),
-						// 	),
-						// );
-						// include($root . "./include/promo-grid.php");
+						$promo_title = 'CREDIT CARD PROMOTION';
+						$promo_cover = './assets/img/design/promotion-cover2.jpg';
+						$promo_grid = array(
+							array(
+								'branch_id' => 'all',
+								'branch_title' => 'ALL BRANCHES',
+								'promo_items' => array(
+									array(
+										'promo_img' => './assets/img/design/card-thumb1.jpg',
+										'promo_title' => 'Bangkok Bank M Summer cation',
+										'promo_desc' => 'สิทธิพิเศษสำหรับบัตรเครดิต Bangkok Bank M Visa',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/655',
+									),
+									array(
+										'promo_img' => './assets/img/design/card-thumb2.jpg',
+										'promo_title' => 'BBL แบ่งชำระ 0% สูงสุด 10 เดือน ทุกชิ้น + เครดิตเงินคืน 12%',
+										'promo_desc' => 'สิทธิพิเศษบัตรเครดิตธนาคารกรุงเทพ',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/640',
+									),
+									array(
+										'promo_img' => './assets/img/design/card-thumb3.jpg',
+										'promo_title' => 'Beauty Hall Summer Cation',
+										'promo_desc' => 'Beauty Hall Summer Cation รับเครดิตเงินคืนสูงสุด 18,000 บาท + แลกรับเครดิตเงินคืน 12%',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/673',
+									),
+									array(
+										'promo_img' => './assets/img/design/card-thumb4.jpg',
+										'promo_title' => 'CardX Summer cation',
+										'promo_desc' => 'สิทธิพิเศษบัตรเครดิต CardX',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/656',
+									),
+									array(
+										'promo_img' => './assets/img/design/card-thumb5.jpg',
+										'promo_title' => 'UOB Summer cation',
+										'promo_desc' => 'สิทธิพิเศษเฉพาะสมาชิกบัตรเครดิต UOB และบัตรเครดิต TMRW',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/652',
+									),
+									array(
+										'promo_img' => './assets/img/design/card-thumb6.jpg',
+										'promo_title' => 'บัตรเครดิต BBL M แบ่งชำระ 0% สูงสุด 10 เดือน ทุกชิ้น',
+										'promo_desc' => 'สิทธิพิเศษสำหรับบัตรเครดิต Bangkok Bank M Visa',
+										'promo_url' => 'https://themalllifestore.themall.co.th/promotion/646',
+									),
+								),
+							),
+						);
+						include($root . "./include/promo-grid.php");
 						?>
 					</div>
 
