@@ -1211,7 +1211,7 @@ select,
 
 .fields-title {
     margin-bottom: var(--spacing-sm);
-    font-size: var(--font-size-h5);
+    font-size: calc(var(--font-size-h5) + 3px);
     font-family: var(--font-heading);
     line-height: 0.8;
 }

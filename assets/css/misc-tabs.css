@@ -351,9 +351,9 @@ html.no-touchevents .contact-us-section .map-item .map-link:hover {
     margin-top: var(--spacing-xl);
 }
 
-.retail-space-section .sub-section p + * {
+/* .retail-space-section .sub-section p + * {
     margin-top: var(--spacing-sm);
-}
+} */
 
 .retail-space-section .sub-section .sub-section-title {
     font-family: var(--font-body);

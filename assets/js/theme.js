@@ -230,7 +230,7 @@ jQuery(function ($) {
         var selectParent = $(this),
             select = $(this).find(".select2"),
             select2fixed = $(this).find(".select2-fixed");
-        select2Multiple = $(this).find(".select2-multiple");
+        var select2Other = $(this).find(".select2.other");
 
         var query = {};
         function markMatch(text, term) {
@@ -259,6 +259,8 @@ jQuery(function ($) {
                 width: "100%",
                 minimumResultsForSearch: -1,
                 dropdownParent: selectParent,
+                tags: select2Other ? true : null,
+                tokenSeparators: select2Other ? [",", " "] : null,
                 templateResult: function (item) {
                     if (item.loading) {
                         return item.text;
@@ -526,7 +528,7 @@ jQuery(function ($) {
                     .data("button");
             } else {
                 // var _txtB = '<i class="ic ic-upload"></i>';
-                var _txtB = "<p>Choose File</p>";
+                var _txtB = "<p>เลือกไฟล์</p>";
             }
 
             var $file = $(this).addClass("custom-file-upload-hidden"),
@@ -539,7 +541,7 @@ jQuery(function ($) {
                 $button = $(
                     '<div class="file-upload-action"><button type="button" class="file-upload-button">' +
                         _txtB +
-                        "</button><p>Maximum file size: 3 MB. Only .jpg and .png formats are allowed.</p></div>"
+                        "</button><p>ขนาดไฟล์สูงสุด: 3 MB. และอนุญาตเฉพาะไฟล์นามสกุล .jpg และ. png</p></div>"
                 ),
                 $label = $(
                     '<div class="file-upload-action"><label class="file-upload-button" for="' +
@@ -1781,17 +1783,17 @@ jQuery(function ($) {
     });
 
     // MENU TRIGGER
+    function closeMenu() {
+        $("html").removeClass("header-menu-enabled");
+        $(".header-menu-trigger").removeClass("active");
+        $("body").removeClass("menu-open");
+
+        setTimeout(() => {
+            $(".menu-tab").removeClass("active");
+        }, 600);
+    }
+
     $(".header-menu-trigger").on("click", function () {
-        function closeMenu() {
-            $("html").removeClass("header-menu-enabled");
-            $(".header-menu-trigger").removeClass("active");
-            $("body").removeClass("menu-open");
-
-            setTimeout(() => {
-                $(".menu-tab").removeClass("active");
-            }, 600);
-        }
-
         if ($(window).width() >= 1280) {
             if ($(this).hasClass("active")) {
                 closeMenu();
@@ -1829,7 +1831,9 @@ jQuery(function ($) {
         $(".menu-tab." + tabId).addClass("active");
     });
 
-    // MENU CONTENT
+    $(".menu-tab").on("click", function (e) {
+        closeMenu();
+    });
 });
 
 //POPUP

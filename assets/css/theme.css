@@ -1022,8 +1022,10 @@ html.no-touchevents .footer-menu a:hover {
     height: 7px;
 }
 .slide-section .swiper-pagination {
-    left: 10vw;
+    left: 0;
+    padding-left: 10vw;
     bottom: var(--spacing-2xl);
+    justify-content: flex-start;
     text-align: left;
 }
 .promotion-section {

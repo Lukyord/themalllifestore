@@ -61,10 +61,10 @@
                     <?php } elseif (preg_match("/^https:/", $cover)) { ?>
                         <iframe
                             id="<?php echo $development_project["project-name"] ?>-iframe"
-                            title="?php echo $development_project['project-name'] ?> video link"
-                            src="<?php echo $cover; ?>">
+                            title="<?php echo $development_project['project-name'] ?> video link"
+                            src="<?php echo $cover; ?>"
                             allow="accelerometer; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
                     <?php } elseif (preg_match("/\.(png|jpg|jpeg|gif)$/", $cover)) { ?>
                         <picture class="object">
