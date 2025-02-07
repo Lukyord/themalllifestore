@@ -1998,3 +1998,15 @@ jQuery(function ($) {
         });
     }
 });
+
+// MISC
+jQuery(document).ready(function ($) {
+    $(".misc .space-item").each(function () {
+        const spaceItem = $(this);
+        const image = spaceItem.find(".image");
+
+        onWindowResize(function () {
+            spaceItem.css("--button-top", `${image.outerHeight() / 2}px`);
+        });
+    });
+});

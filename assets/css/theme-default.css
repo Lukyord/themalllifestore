@@ -1383,5 +1383,5 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: var(--spacing-3xs);
+    column-gap: var(--spacing-2xs);
 }

@@ -163,16 +163,31 @@
                                                 for ($i = 0; $i < 5; $i++) {
                                                 ?>
                                                     <div class="space-item">
-                                                        <div class="image">
-                                                            <img src="./assets/img/design/retail-gallery<?php echo $i + 1 ?>.jpg" alt="Space Image">
-                                                        </div>
-                                                        <div class="text">
-                                                            <h5 class="space-name font-body">NGAMWONGWAN</h5>
-                                                            <div class="size">
-                                                                <p>Size : 2,800 square meters </p>
-                                                                <p>(Pre-Function 850 square meters)</p>
+                                                        <div class="swiper auto fade">
+                                                            <div class="swiper-wrapper">
+                                                                <?php
+                                                                for ($j = 0; $j < 3; $j++) {
+                                                                ?>
+                                                                    <div class="swiper-slide">
+                                                                        <div class="space-item-inner">
+                                                                            <div class="image">
+                                                                                <img src="./assets/img/design/retail-gallery<?php echo $i + 1 ?>.jpg" alt="Space Image">
+                                                                            </div>
+                                                                            <div class="text">
+                                                                                <h5 class="space-name font-body">NGAMWONGWAN <?php echo $j + 1 ?></h5>
+                                                                                <div class="size">
+                                                                                    <p>Size : 2,800 square meters </p>
+                                                                                    <p>(Pre-Function 850 square meters)</p>
+                                                                                </div>
+                                                                                <address>Address : 430 ถนน งามวงศ์วาน ตำบลบางเขน อำเภอเมืองนนทบุรี นนทบุรี 11000</address>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php } ?>
                                                             </div>
-                                                            <address>Address : 430 ถนน งามวงศ์วาน ตำบลบางเขน อำเภอเมืองนนทบุรี นนทบุรี 11000</address>
+                                                            <div class="swiper-button swiper-button-prev"></div>
+                                                            <div class="swiper-button swiper-button-next"></div>
+                                                            <div class="swiper-pagination"></div>
                                                         </div>
                                                     </div>
                                                 <?php } ?>
