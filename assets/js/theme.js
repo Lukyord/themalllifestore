@@ -2027,8 +2027,8 @@ jQuery(function ($) {
 
             // Replay textFlyIn animation
             $(".homepage-intro .tab-hover-link").each(function () {
-                $this.css("opacity", 1);
                 var $this = $(this);
+                $this.css("opacity", 1);
                 void $this[0].offsetWidth; // Force reflow
                 $this.addClass("textFlyIn");
             });
