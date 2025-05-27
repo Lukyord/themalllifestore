@@ -56,7 +56,8 @@ include($root . "include/element-index-popup.php");
 					?>
 						<li>
 							<a
-								class="tab-hover-link fsw-h2 ff-heading c-theme-red wow textFlyIn"
+								class="tab-hover-link fsw-h2 ff-heading c-theme-red"
+								style="animation-delay: <?php echo $index * 0.25; ?>s; animation-duration: <?php echo 1 + ($index * 0.05); ?>s;"
 								data-wow-delay="<?php echo $index * 0.25; ?>s"
 								data-wow-duration="<?php echo 1 + ($index * 0.05); ?>s"
 								data-tab-id="<?php echo '#' . $intro_data['intro_id']; ?>"

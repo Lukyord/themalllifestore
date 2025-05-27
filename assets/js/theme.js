@@ -2016,11 +2016,10 @@ jQuery(function ($) {
     if ($(".homepage-popup").length) {
         $("html").addClass("no-scroll");
 
-        $(".homepage-intro .tab-hover-link").each(function () {
-            var $this = $(this);
-            $this.css("opacity", 0);
-            $this.removeClass("textFlyIn");
-        });
+        // $(".homepage-intro .tab-hover-link").each(function () {
+        //     var $this = $(this);
+        //     $this.removeClass("textFlyIn");
+        // });
         $(".homepage-popup .button").on("click", function () {
             $("html").removeClass("no-scroll");
             $(".homepage-popup").fadeOut();
@@ -2028,14 +2027,9 @@ jQuery(function ($) {
             // Replay textFlyIn animation
             $(".homepage-intro .tab-hover-link").each(function () {
                 var $this = $(this);
-                $this.css("opacity", 1);
                 void $this[0].offsetWidth; // Force reflow
                 $this.addClass("textFlyIn");
             });
-
-            // Reinitialize WOW.js
-            var wow = new WOW();
-            wow.init();
         });
     }
 });

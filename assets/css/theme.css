@@ -60,6 +60,7 @@
     animation-name: textFlyIn;
     transition-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
     transition-delay: 0s;
+    animation-fill-mode: both;
 }
 @-webkit-keyframes c-fadeInUp {
     0% {
