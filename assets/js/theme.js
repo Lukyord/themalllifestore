@@ -2010,3 +2010,15 @@ jQuery(document).ready(function ($) {
         });
     });
 });
+
+// HOMEPAGE POPUP
+jQuery(function ($) {
+    if ($(".homepage-popup").length) {
+        $("html").addClass("no-scroll");
+
+        $(".homepage-popup .button").on("click", function () {
+            $("html").removeClass("no-scroll");
+            $(".homepage-popup").fadeOut();
+        });
+    }
+});

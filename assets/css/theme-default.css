@@ -1385,3 +1385,62 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     align-items: center;
     column-gap: var(--spacing-2xs);
 }
+/* ========== END OF SWIPER ========== */
+
+/* ========== BUTTON ========== */
+.button {
+    display: inline-block;
+    padding: var(--spacing-2xs) var(--spacing-2md);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body2);
+    line-height: var(--line-height-button2);
+    border-radius: 500px;
+    line-height: normal;
+    transition: var(--duration) var(--timing-function);
+}
+.button:hover {
+    color: var(--color-theme-red);
+}
+/* ========== END OF BUTTON ========== */
+
+/* ========== HOMEPAGE POPUP ========== */
+.homepage-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    background-color: #742d95;
+}
+
+.homepage-popup .popup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    grid-gap: var(--spacing-2xl);
+}
+
+.homepage-popup .popup-media {
+    aspect-ratio: 1;
+    width: 65vh;
+}
+
+.no-scroll {
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+@media (max-width: 991px) {
+    .homepage-popup .popup-media {
+        width: 90vw;
+    }
+
+    .homepage-popup .popup-container {
+        grid-gap: var(--spacing-md);
+    }
+}
+
+/* ========== END OF HOMEPAGE POPUP ========== */

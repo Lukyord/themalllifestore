@@ -4,6 +4,15 @@
 <div id="intro_logo" class="intro-logo">
 	<img class="filter-white " data-wow-delay="0.4s" src="./assets/img/design/site-logo.svg" alt="">
 </div>
+
+<?php
+$popup = [
+	'popup_img' => './assets/img/design/popup-image.png',
+	'popup_img_mb' => './assets/img/design/popup-image.png',
+];
+include($root . "include/element-index-popup.php");
+?>
+
 <main id="main" class="page-main page-homepage">
 	<div class="homepage-intro">
 		<div class="tab-container no-wow">
