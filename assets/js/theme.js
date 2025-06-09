@@ -2,9 +2,9 @@
 jQuery(function ($) {
     // ANIMATE
     $('.entry-fadeIn > *:not([class*="wp-block-"])').addClass("wow fadeIn");
-    $(
-        '.entry-fadeIn *:is([class*="wp-block-"]) > *:not([class*="wp-block-"], ul, ol), .entry-fadeIn li'
-    ).addClass("wow fadeIn");
+    $('.entry-fadeIn *:is([class*="wp-block-"]) > *:not([class*="wp-block-"], ul, ol), .entry-fadeIn li').addClass(
+        "wow fadeIn"
+    );
 });
 
 // ON WINDOW RESIZE CALLBACK =============================
@@ -71,10 +71,7 @@ if ($("body").hasClass("homepage")) {
     var lastWidth = $(window).width();
     $(window).resize(function () {
         if ($(window).width() != lastWidth) {
-            $("body").css(
-                "--home-header",
-                $(".homepage-intro").height() + "px"
-            );
+            $("body").css("--home-header", $(".homepage-intro").height() + "px");
         }
     });
 }
@@ -82,8 +79,7 @@ $(".directory-popup").magnificPopup({
     type: "image",
     mainClass: "popup-container",
     closeBtnInside: false,
-    closeMarkup:
-        '<button title="%title%" type="button" class="mfp-close"><i class="ic ic-close"></i></button>',
+    closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="ic ic-close"></i></button>',
     callbacks: {
         open: function () {
             $("body").attr("data-lenis-prevent", "");
@@ -104,9 +100,7 @@ jQuery(function ($) {
     }
     if ($(".page-homepage").length) {
         function posLogo() {
-            const nav_height = $(".homepage-intro")
-                .find(".tab-wrapper")
-                .outerHeight();
+            const nav_height = $(".homepage-intro").find(".tab-wrapper").outerHeight();
             const intro_height = $(".homepage-intro").outerHeight();
             $("#intro_logo").css("--calc-h", intro_height - nav_height + "px");
         }
@@ -117,9 +111,7 @@ jQuery(function ($) {
 
         $(function () {
             if ($("#intro_logo").length) {
-                const nav_height = $(".homepage-intro")
-                    .find(".tab-wrapper")
-                    .outerHeight();
+                const nav_height = $(".homepage-intro").find(".tab-wrapper").outerHeight();
                 const intro_height = $(".homepage-intro").outerHeight();
                 const calc = intro_height - nav_height - 30;
                 const start = "top " + calc + "px";
@@ -161,10 +153,7 @@ jQuery(function ($) {
     function vdoChange(Obj) {
         vdo = $(Obj);
         vdoSrc = $(Obj).data("vdo-src");
-        vdoSrcset =
-            typeof $(Obj).data("vdo-srcset") != "undefined"
-                ? $(Obj).data("vdo-srcset")
-                : "";
+        vdoSrcset = typeof $(Obj).data("vdo-srcset") != "undefined" ? $(Obj).data("vdo-srcset") : "";
 
         var width = $(document).width();
         if (width < 992 && vdoSrcset != "") {
@@ -285,22 +274,15 @@ jQuery(function ($) {
                 selectParent.closest(".input-group").removeClass("filled");
             })
             .on("select2:open", function (e) {
-                selectParent
-                    .find(".select2-results__options")
-                    .attr("data-lenis-prevent", "");
+                selectParent.find(".select2-results__options").attr("data-lenis-prevent", "");
             });
 
         if (select.hasClass("promotion-select")) {
             select.on("select2:select", function (e) {
+                select.parents(".promotion-wrapper").find(".promoGroup-container.active").removeClass("active");
                 select
                     .parents(".promotion-wrapper")
-                    .find(".promoGroup-container.active")
-                    .removeClass("active");
-                select
-                    .parents(".promotion-wrapper")
-                    .find(
-                        '.promoGroup-container[data-id="' + select.val() + '"]'
-                    )
+                    .find('.promoGroup-container[data-id="' + select.val() + '"]')
                     .addClass("active");
             });
         }
@@ -309,10 +291,7 @@ jQuery(function ($) {
             select.on("select2:select", function (e) {
                 const selectBranch = ".tab-content#" + select.val();
 
-                select
-                    .closest(".happening-section")
-                    .find(".tab-content")
-                    .removeClass("active");
+                select.closest(".happening-section").find(".tab-content").removeClass("active");
                 select
                     .closest(".happening-section")
                     .find(selectBranch)
@@ -326,14 +305,8 @@ jQuery(function ($) {
             select.on("select2:select", function (e) {
                 const selectBranch = ".tab-content#" + select.val();
 
-                select
-                    .closest("*[class*='-section']")
-                    .find(".tab-content")
-                    .removeClass("active");
-                select
-                    .closest("*[class*='-section']")
-                    .find(selectBranch)
-                    .addClass("active");
+                select.closest("*[class*='-section']").find(".tab-content").removeClass("active");
+                select.closest("*[class*='-section']").find(selectBranch).addClass("active");
 
                 // scroll down 1 px
                 var scroll = $(window).scrollTop();
@@ -345,23 +318,14 @@ jQuery(function ($) {
             select.on("select2:select", function (e) {
                 const selectBranch = ".tab-content#" + select.val();
 
-                select
-                    .closest("*[class*='-section']")
-                    .find(".tab-content")
-                    .removeClass("active");
-                select
-                    .closest("*[class*='-section']")
-                    .find(selectBranch)
-                    .addClass("active");
+                select.closest("*[class*='-section']").find(".tab-content").removeClass("active");
+                select.closest("*[class*='-section']").find(selectBranch).addClass("active");
             });
         }
 
         if (select.hasClass("select-branch")) {
             select.on("select2:select", function (e) {
-                select
-                    .parents(".directory-select")
-                    .find(".floorSelect-item.active")
-                    .removeClass("active");
+                select.parents(".directory-select").find(".floorSelect-item.active").removeClass("active");
                 select
                     .parents(".grid-directory")
                     .find(".directory-store .directoryContent-item.active")
@@ -377,35 +341,21 @@ jQuery(function ($) {
                     .addClass("active");
                 select
                     .parents(".grid-directory")
-                    .find(
-                        '.directory-store .directoryContent-item[data-id="' +
-                            select.val() +
-                            '"]'
-                    )
+                    .find('.directory-store .directoryContent-item[data-id="' + select.val() + '"]')
                     .addClass("active");
                 select
                     .parents(".grid-directory")
-                    .find(
-                        '.directory-maps .mapsContent-item[data-id="' +
-                            select.val() +
-                            '"]'
-                    )
+                    .find('.directory-maps .mapsContent-item[data-id="' + select.val() + '"]')
                     .addClass("active");
             });
         }
 
         if (select.hasClass("select-floor")) {
             select.on("select2:select", function (e) {
-                const branch_id = select
-                    .parents(".floorSelect-item")
-                    .data("id");
+                const branch_id = select.parents(".floorSelect-item").data("id");
                 select
                     .parents(".grid-directory")
-                    .find(
-                        '.directoryContent-item[data-id="' +
-                            branch_id +
-                            '"] .tab-content.active'
-                    )
+                    .find('.directoryContent-item[data-id="' + branch_id + '"] .tab-content.active')
                     .removeClass("active");
                 select
                     .parents(".grid-directory")
@@ -419,20 +369,12 @@ jQuery(function ($) {
                     .addClass("active");
                 select
                     .parents(".grid-directory")
-                    .find(
-                        '.mapsContent-item[data-id="' +
-                            branch_id +
-                            '"] .tab-content.active'
-                    )
+                    .find('.mapsContent-item[data-id="' + branch_id + '"] .tab-content.active')
                     .removeClass("active");
                 select
                     .parents(".grid-directory")
                     .find(
-                        '.mapsContent-item[data-id="' +
-                            branch_id +
-                            '"] .tab-content[data-floor="' +
-                            select.val() +
-                            '"]'
+                        '.mapsContent-item[data-id="' + branch_id + '"] .tab-content[data-floor="' + select.val() + '"]'
                     )
                     .addClass("active");
             });
@@ -467,9 +409,7 @@ jQuery(function ($) {
                 selectParent.closest(".input-group").removeClass("filled");
             })
             .on("select2:open", function (e) {
-                selectParent
-                    .find(".select2-results__options")
-                    .attr("data-lenis-prevent", "");
+                selectParent.find(".select2-results__options").attr("data-lenis-prevent", "");
             });
 
         select.closest(".select").addClass("select2-parent");
@@ -504,28 +444,21 @@ jQuery(function ($) {
             var _txtB;
 
             if (
-                typeof $(this)
-                    .closest(".custom-file-upload")
-                    .data("placeholder") != "undefined"
+                typeof $(this).closest(".custom-file-upload").data("placeholder") != "undefined"
                     ? $(this).closest(".custom-file-upload").data("placeholder")
                     : ""
             ) {
-                _txtP = $(this)
-                    .closest(".custom-file-upload")
-                    .data("placeholder");
+                _txtP = $(this).closest(".custom-file-upload").data("placeholder");
             } else {
                 _txtP = "";
             }
 
             if (
-                typeof $(this).closest(".custom-file-upload").data("button") !=
-                "undefined"
+                typeof $(this).closest(".custom-file-upload").data("button") != "undefined"
                     ? $(this).closest(".custom-file-upload").data("button")
                     : ""
             ) {
-                var _txtB = $(this)
-                    .closest(".custom-file-upload")
-                    .data("button");
+                var _txtB = $(this).closest(".custom-file-upload").data("button");
             } else {
                 // var _txtB = '<i class="ic ic-upload"></i>';
                 var _txtB = "<p>เลือกไฟล์</p>";
@@ -533,11 +466,7 @@ jQuery(function ($) {
 
             var $file = $(this).addClass("custom-file-upload-hidden"),
                 $wrap = $('<div class="file-upload-wrapper">'),
-                $input = $(
-                    '<input type="text" class="file-upload-input" placeholder="' +
-                        _txtP +
-                        '" readonly />'
-                ),
+                $input = $('<input type="text" class="file-upload-input" placeholder="' + _txtP + '" readonly />'),
                 $button = $(
                     '<div class="file-upload-action"><button type="button" class="file-upload-button">' +
                         _txtB +
@@ -556,9 +485,7 @@ jQuery(function ($) {
                 left: "-9999px",
             });
 
-            $wrap
-                .insertAfter($file)
-                .append($file, $input, isIE ? $label : $button);
+            $wrap.insertAfter($file).append($file, $input, isIE ? $label : $button);
 
             $file.attr("tabIndex", -1);
             $button.attr("tabIndex", -1);
@@ -627,13 +554,7 @@ jQuery(function ($) {
                     .filter(function () {
                         return !this.value;
                     }),
-                $file = $(
-                    '<input type="file" id="' +
-                        uniqId +
-                        '" name="' +
-                        _this.attr("name") +
-                        '"/>'
-                );
+                $file = $('<input type="file" id="' + uniqId + '" name="' + _this.attr("name") + '"/>');
 
             setTimeout(function () {
                 if (_this.val()) {
@@ -662,9 +583,7 @@ jQuery(function ($) {
         var tabGroupParent = $(elem).parents(".tab-container");
 
         if (tabGroupParent.find(".tab-dropdown-ctrl").length) {
-            tabGroupParent
-                .find(".tab-dropdown-ctrl .value")
-                .text(tabGroupParent.find(".tab a.active", this).text());
+            tabGroupParent.find(".tab-dropdown-ctrl .value").text(tabGroupParent.find(".tab a.active", this).text());
         }
 
         if (tabGroupParent.find(".tab-content.active video").length) {
@@ -673,12 +592,10 @@ jQuery(function ($) {
                 $(this).get(0).currentTime = 0;
             });
         } else {
-            tabGroupParent
-                .find('.tab-content:not(".active") video')
-                .each(function () {
-                    $(this).get(0).pause();
-                    $(this).get(0).currentTime = 0;
-                });
+            tabGroupParent.find('.tab-content:not(".active") video').each(function () {
+                $(this).get(0).pause();
+                $(this).get(0).currentTime = 0;
+            });
         }
     }
     tabActive();
@@ -741,11 +658,7 @@ jQuery(function ($) {
 
     if ($(".homepage-intro").length) {
         setTimeout(function () {
-            $(".homepage-intro .tab-wrapper .tab-hover")
-                .children()
-                .first()
-                .find("a")
-                .addClass("active");
+            $(".homepage-intro .tab-wrapper .tab-hover").children().first().find("a").addClass("active");
         }, 1000);
 
         function autoAddClass() {
@@ -780,19 +693,13 @@ jQuery(function ($) {
 
         showTab(_id);
 
-        $(this)
-            .parents(".tab-container")
-            .find(".tab-link")
-            .removeClass("active");
+        $(this).parents(".tab-container").find(".tab-link").removeClass("active");
         $(this)
             .parents(".tab-container")
             .find('.tab-link[href="' + _id + '"]')
             .addClass("active");
 
-        $(this)
-            .parents(".tab-container")
-            .find(".tab > li")
-            .removeClass("active-parent");
+        $(this).parents(".tab-container").find(".tab > li").removeClass("active-parent");
         $(this)
             .parents(".tab-container")
             .find('.tab-link[href="' + _id + '"]')
@@ -829,18 +736,14 @@ jQuery(function ($) {
             sParameterName = sURLVariables[i].split("=");
 
             if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined
-                    ? true
-                    : decodeURIComponent(sParameterName[1]);
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
             }
         }
         return false;
     };
     var tabid = getUrlParameter("id");
     if (tabid) {
-        var _parent = $('.tab-link[href="#' + tabid + '"]').parents(
-            ".tab-container"
-        );
+        var _parent = $('.tab-link[href="#' + tabid + '"]').parents(".tab-container");
         _parent.find(".tab-link").removeClass("active");
         _parent.find('.tab-link[href="#' + tabid + '"]').addClass("active");
         _parent.find(".tab-content").removeClass("active");
@@ -850,13 +753,9 @@ jQuery(function ($) {
     $(".tab-dropdown").each(function () {
         var _this = $(this);
 
-        _this
-            .find(".tab-dropdown-ctrl .value")
-            .text(_this.find(".tab-link.active", this).text());
+        _this.find(".tab-dropdown-ctrl .value").text(_this.find(".tab-link.active", this).text());
         _this.find(".tab-link").click(function () {
-            _this
-                .find(".tab-dropdown-ctrl .value")
-                .text(_this.find(".tab-link.active", this).text());
+            _this.find(".tab-dropdown-ctrl .value").text(_this.find(".tab-link.active", this).text());
         });
 
         _this.find("> .tab-dropdown-ctrl").click(function () {
@@ -935,11 +834,7 @@ jQuery(function ($) {
                         _thisParent.find("> .entry-panel").slideToggle(200);
 
                         setTimeout(function () {
-                            if (
-                                _thisParent
-                                    .find("> .entry-panel")
-                                    .is(":visible")
-                            ) {
+                            if (_thisParent.find("> .entry-panel").is(":visible")) {
                                 $("html,body").animate(
                                     {
                                         scrollTop: _thisParent.offset().top - h,
@@ -993,15 +888,12 @@ jQuery(function ($) {
 jQuery(function ($) {
     $(".link-scroll").click(function () {
         if (
-            location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
+            location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
             location.hostname == this.hostname
         ) {
             var h = $(window).outerHeight() / 4;
             var target = $(this.hash);
-            target = target.length
-                ? target
-                : $("[name=" + this.hash.slice(1) + "]");
+            target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
             if (target.length) {
                 $("html, body").animate(
                     {
@@ -1092,14 +984,8 @@ jQuery(function ($) {
                 watchSlidesProgress: true,
                 on: {
                     slideChange: function () {
-                        const activeDate =
-                            this.slides[this.activeIndex].getAttribute(
-                                "data-target-date"
-                            );
-                        $(this.el)
-                            .closest(".happening-container")
-                            .find(".tab-content")
-                            .removeClass("active");
+                        const activeDate = this.slides[this.activeIndex].getAttribute("data-target-date");
+                        $(this.el).closest(".happening-container").find(".tab-content").removeClass("active");
                         $(this.el)
                             .closest(".happening-container")
                             .find(".tab-content#" + activeDate)
@@ -1144,10 +1030,7 @@ jQuery(function ($) {
                 .find(".swiper-happeningThumb .swiper-slide")
                 .on("click", function () {
                     const targetDate = $(this).data("target-date");
-                    $(this)
-                        .closest(".happening-container")
-                        .find(".tab-content")
-                        .removeClass("active");
+                    $(this).closest(".happening-container").find(".tab-content").removeClass("active");
                     $(this)
                         .closest(".happening-container")
                         .find(".tab-content#" + targetDate)
@@ -1206,9 +1089,7 @@ jQuery(function ($) {
     // Set nav align with thumb
     function alignThumb() {
         $(".swiper-container.align-thumb").each(function () {
-            const thumb_h = $(this)
-                .find(".swiper-slide .media-wrapper")
-                .height();
+            const thumb_h = $(this).find(".swiper-slide .media-wrapper").height();
             $(this)
                 .find(".swiper-nav")
                 .css("height", thumb_h + "px");
@@ -1232,12 +1113,8 @@ jQuery(function ($) {
                 slideButtonNext = _this.find(".swiper-button-next")[0],
                 slideButtonPrev = _this.find(".swiper-button-prev")[0];
 
-            var slideButtonNextParent = $(this)
-                    .parents('*[class*="swiper-container"]')
-                    .find(".swiper-button-next")[0],
-                slideButtonPrevParent = $(this)
-                    .parents('*[class*="swiper-container"]')
-                    .find(".swiper-button-prev")[0];
+            var slideButtonNextParent = $(this).parents('*[class*="swiper-container"]').find(".swiper-button-next")[0],
+                slideButtonPrevParent = $(this).parents('*[class*="swiper-container"]').find(".swiper-button-prev")[0];
 
             //MODULES
             var slideFade = _this.hasClass("fade"),
@@ -1255,43 +1132,20 @@ jQuery(function ($) {
                         vdo.get(0).preload = "metadata";
                         vdo.get(0).onloadedmetadata = function () {
                             var vdoTime = (vdo.get(0).duration - 2) * 1000;
-                            vdo.closest(".swiper-slide").attr(
-                                "data-swiper-autoplay",
-                                vdoTime
-                            );
+                            vdo.closest(".swiper-slide").attr("data-swiper-autoplay", vdoTime);
 
                             if ($(document).width() < 992) {
-                                _this
-                                    .find(".swiper-slide .visible-device-sm")
-                                    .each(function () {
-                                        if (
-                                            !$(this).find("video[autoplay]")
-                                                .length
-                                        ) {
-                                            $(this)
-                                                .closest(".swiper-slide")
-                                                .attr(
-                                                    "data-swiper-autoplay",
-                                                    "4000"
-                                                );
-                                        }
-                                    });
+                                _this.find(".swiper-slide .visible-device-sm").each(function () {
+                                    if (!$(this).find("video[autoplay]").length) {
+                                        $(this).closest(".swiper-slide").attr("data-swiper-autoplay", "4000");
+                                    }
+                                });
                             } else {
-                                _this
-                                    .find(".swiper-slide .hidden-device-sm")
-                                    .each(function () {
-                                        if (
-                                            !$(this).find("video[autoplay]")
-                                                .length
-                                        ) {
-                                            $(this)
-                                                .closest(".swiper-slide")
-                                                .attr(
-                                                    "data-swiper-autoplay",
-                                                    "4000"
-                                                );
-                                        }
-                                    });
+                                _this.find(".swiper-slide .hidden-device-sm").each(function () {
+                                    if (!$(this).find("video[autoplay]").length) {
+                                        $(this).closest(".swiper-slide").attr("data-swiper-autoplay", "4000");
+                                    }
+                                });
                             }
                         };
                     });
@@ -1327,25 +1181,16 @@ jQuery(function ($) {
                     init: function () {
                         vdoData();
 
-                        if (
-                            _this.find(".swiper-slide-active video[autoplay]")
-                                .length
-                        ) {
-                            _this
-                                .find(".swiper-slide-active video[autoplay]")
-                                .each(function () {
-                                    $(this).get(0).play();
-                                    $(this).get(0).currentTime = 0;
-                                });
+                        if (_this.find(".swiper-slide-active video[autoplay]").length) {
+                            _this.find(".swiper-slide-active video[autoplay]").each(function () {
+                                $(this).get(0).play();
+                                $(this).get(0).currentTime = 0;
+                            });
                         } else {
-                            _this
-                                .find(
-                                    '.swiper-slide:not(".swiper-slide-active") video'
-                                )
-                                .each(function () {
-                                    $(this).get(0).pause();
-                                    $(this).get(0).currentTime = 0;
-                                });
+                            _this.find('.swiper-slide:not(".swiper-slide-active") video').each(function () {
+                                $(this).get(0).pause();
+                                $(this).get(0).currentTime = 0;
+                            });
                         }
                     },
                     resize: function () {
@@ -1357,27 +1202,19 @@ jQuery(function ($) {
 
             swiper.on("slideChangeTransitionStart", function () {
                 if (_this.find(".swiper-slide-active video[autoplay]").length) {
-                    _this
-                        .find(".swiper-slide-active video[autoplay]")
-                        .each(function () {
-                            $(this).get(0).play();
-                            $(this).get(0).currentTime = 0;
-                        });
+                    _this.find(".swiper-slide-active video[autoplay]").each(function () {
+                        $(this).get(0).play();
+                        $(this).get(0).currentTime = 0;
+                    });
                 }
             });
 
             swiper.on("slideChangeTransitionEnd", function () {
-                if (
-                    _this.find(
-                        '.swiper-slide:not(".swiper-slide-active") video'
-                    ).length
-                ) {
-                    _this
-                        .find('.swiper-slide:not(".swiper-slide-active") video')
-                        .each(function () {
-                            $(this).get(0).pause();
-                            $(this).get(0).currentTime = 0;
-                        });
+                if (_this.find('.swiper-slide:not(".swiper-slide-active") video').length) {
+                    _this.find('.swiper-slide:not(".swiper-slide-active") video').each(function () {
+                        $(this).get(0).pause();
+                        $(this).get(0).currentTime = 0;
+                    });
                 }
             });
 
@@ -1415,18 +1252,12 @@ jQuery(function ($) {
                 _this
                     .closest('*[class*="swiper-container"]')
                     .find('*[class*="swiper-button-"]')
-                    .css(
-                        "height",
-                        _this.find('[class*="object"]').outerHeight()
-                    );
+                    .css("height", _this.find('[class*="object"]').outerHeight());
                 $(window).resize(function () {
                     _this
                         .closest('*[class*="swiper-container"]')
                         .find('*[class*="swiper-button-"]')
-                        .css(
-                            "height",
-                            _this.find('[class*="object"]').outerHeight()
-                        );
+                        .css("height", _this.find('[class*="object"]').outerHeight());
                 });
             }
         });
@@ -1473,12 +1304,8 @@ jQuery(function ($) {
                 slideButtonNext = _this.find(".swiper-button-next")[0],
                 slideButtonPrev = _this.find(".swiper-button-prev")[0];
 
-            var slideButtonNextParent = $(this)
-                    .parents('*[class*="swiper-container"]')
-                    .find(".swiper-button-next")[0],
-                slideButtonPrevParent = $(this)
-                    .parents('*[class*="swiper-container"]')
-                    .find(".swiper-button-prev")[0];
+            var slideButtonNextParent = $(this).parents('*[class*="swiper-container"]').find(".swiper-button-next")[0],
+                slideButtonPrevParent = $(this).parents('*[class*="swiper-container"]').find(".swiper-button-prev")[0];
 
             //MODULES
             var slideCentered = _this.hasClass("centered"),
@@ -1561,18 +1388,12 @@ jQuery(function ($) {
                 _this
                     .closest('*[class*="swiper-container"]')
                     .find('*[class*="swiper-button-"]')
-                    .css(
-                        "height",
-                        _this.find('[class*="object"]').outerHeight()
-                    );
+                    .css("height", _this.find('[class*="object"]').outerHeight());
                 $(window).resize(function () {
                     _this
                         .closest('*[class*="swiper-container"]')
                         .find('*[class*="swiper-button-"]')
-                        .css(
-                            "height",
-                            _this.find('[class*="object"]').outerHeight()
-                        );
+                        .css("height", _this.find('[class*="object"]').outerHeight());
                 });
             }
         });
@@ -1612,8 +1433,7 @@ jQuery(function ($) {
                 }
             }
             //end
-            var currentScrollOffset =
-                $(document).scrollTop() + $(window).innerHeight();
+            var currentScrollOffset = $(document).scrollTop() + $(window).innerHeight();
             var effectiveHeight = bound.outerHeight() + bound.offset().top;
             if (currentScrollOffset < effectiveHeight) {
                 //out of footer
@@ -1667,31 +1487,29 @@ jQuery(function ($) {
         });
     }
 });
-document
-    .querySelectorAll(".video video, .wp-block-video video")
-    .forEach(function (item) {
-        item.addEventListener("playing", function (e) {
-            e.target.closest(".video").classList.add("playing");
+document.querySelectorAll(".video video, .wp-block-video video").forEach(function (item) {
+    item.addEventListener("playing", function (e) {
+        e.target.closest(".video").classList.add("playing");
 
-            if (e.target.closest(".video").classList.contains("hidden-ctrls")) {
-                e.target.removeAttribute("controls");
-            } else {
-                e.target.setAttribute("controls", "");
-            }
-        });
-
-        item.addEventListener("pause", function (e) {
-            e.target.closest(".video").classList.remove("playing");
+        if (e.target.closest(".video").classList.contains("hidden-ctrls")) {
             e.target.removeAttribute("controls");
-        });
-
-        item.addEventListener("ended", function (e) {
-            e.target.closest(".video").classList.remove("playing");
-            e.target.src = "";
-            e.target.src = e.target.currentSrc;
-            e.target.removeAttribute("controls");
-        });
+        } else {
+            e.target.setAttribute("controls", "");
+        }
     });
+
+    item.addEventListener("pause", function (e) {
+        e.target.closest(".video").classList.remove("playing");
+        e.target.removeAttribute("controls");
+    });
+
+    item.addEventListener("ended", function (e) {
+        e.target.closest(".video").classList.remove("playing");
+        e.target.src = "";
+        e.target.src = e.target.currentSrc;
+        e.target.removeAttribute("controls");
+    });
+});
 
 /* FORM */
 jQuery(function ($) {
@@ -1808,10 +1626,7 @@ jQuery(function ($) {
 
         // HTML CLASS
         $("html").addClass("header-menu-enabled");
-        if (
-            !$("html").hasClass("header-bound") &&
-            $("html .page-homepage").length
-        ) {
+        if (!$("html").hasClass("header-bound") && $("html .page-homepage").length) {
             $("html, body").animate(
                 {
                     scrollTop: $("#header-bound").offset().top,
@@ -1907,19 +1722,13 @@ jQuery(function ($) {
 /* LOCATION HASH */
 jQuery(function ($) {
     setTimeout(function () {
-        var headerHeight =
-            parseFloat(
-                getComputedStyle(document.documentElement).getPropertyValue(
-                    "--header-h"
-                )
-            ) || 0;
+        var headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 0;
         if (window.location.hash) {
             $("html, body")
                 .delay(100)
                 .animate(
                     {
-                        scrollTop:
-                            $(window.location.hash).offset().top - headerHeight,
+                        scrollTop: $(window.location.hash).offset().top - headerHeight,
                     },
                     800
                 );
@@ -1937,11 +1746,7 @@ jQuery(function ($) {
             var targetOffset = $(targetId).offset().top;
 
             var headerHeight =
-                parseFloat(
-                    getComputedStyle(document.documentElement).getPropertyValue(
-                        "--header-h"
-                    )
-                ) || 0;
+                parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 0;
 
             $("html, body").animate(
                 {
@@ -2011,18 +1816,20 @@ jQuery(document).ready(function ($) {
     });
 });
 
-// HOMEPAGE POPUP
+// HOMEPAGE ENTERSITE
 jQuery(function ($) {
-    if ($(".homepage-popup").length) {
+    if ($(".homepage-entersite").length) {
         $("html").addClass("no-scroll");
+        $(".homepage-intro .tab-hover-link").each(function () {
+            var $this = $(this);
+            $this.removeClass("textFlyIn");
+        });
 
-        // $(".homepage-intro .tab-hover-link").each(function () {
-        //     var $this = $(this);
-        //     $this.removeClass("textFlyIn");
-        // });
-        $(".homepage-popup .button").on("click", function () {
-            $("html").removeClass("no-scroll");
-            $(".homepage-popup").fadeOut();
+        $(".homepage-entersite .button").on("click", function () {
+            if (!$(".homepage-popup").length) {
+                $("html").removeClass("no-scroll");
+            }
+            $(".homepage-entersite").fadeOut();
 
             // Replay textFlyIn animation
             $(".homepage-intro .tab-hover-link").each(function () {
@@ -2030,6 +1837,18 @@ jQuery(function ($) {
                 void $this[0].offsetWidth; // Force reflow
                 $this.addClass("textFlyIn");
             });
+        });
+    }
+});
+
+// HOMEPAGE POPUP
+jQuery(function ($) {
+    if ($(".homepage-popup").length) {
+        $("html").addClass("no-scroll");
+
+        $(".homepage-popup .button").on("click", function () {
+            $("html").removeClass("no-scroll");
+            $(".homepage-popup").fadeOut();
         });
     }
 });

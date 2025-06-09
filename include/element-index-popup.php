@@ -10,7 +10,7 @@
 
         <div class="popup-button">
             <a href="javascript:;" class="button">
-                ENTER SITE
+                CLOSE
             </a>
         </div>
     </div>

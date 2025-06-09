@@ -6,9 +6,18 @@
 </div>
 
 <?php
+$entersite = [
+	'entersite_img' => './assets/img/design/entersite-image.png',
+	'entersite_img_mb' => './assets/img/design/entersite-image.png',
+	'background_color' => '#742d95',
+];
+include($root . "include/element-index-entersite.php");
+?>
+
+<?php
 $popup = [
-	'popup_img' => './assets/img/design/popup-image.png',
-	'popup_img_mb' => './assets/img/design/popup-image.png',
+	'popup_img' => './assets/img/design/popup-image.jpg',
+	'popup_img_mb' => './assets/img/design/popup-image.jpg',
 ];
 include($root . "include/element-index-popup.php");
 ?>
@@ -56,7 +65,7 @@ include($root . "include/element-index-popup.php");
 					?>
 						<li>
 							<a
-								class="tab-hover-link fsw-h2 ff-heading c-theme-red"
+								class="tab-hover-link fsw-h2 ff-heading c-theme-red textFlyIn"
 								style="animation-delay: <?php echo $index * 0.25; ?>s; animation-duration: <?php echo 1 + ($index * 0.05); ?>s;"
 								data-wow-delay="<?php echo $index * 0.25; ?>s"
 								data-wow-duration="<?php echo 1 + ($index * 0.05); ?>s"
